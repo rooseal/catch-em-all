@@ -6,9 +6,17 @@ export class CatchEmAll extends React.Component {
         return (
             <div className='container'>
                 <h1>Collect all pokemons</h1>
+                <h2>List of your pokemons</h2>
             </div>
         )
     }
 }
 
-ReactDOM.render(document.getElementById('reactApp'), CatchEmAll);
+ReactDOM.render(
+    <CatchEmAll />,
+    document.getElementById('reactApp')
+);
+
+if(module.hot) {
+    module.hot.accept();
+}
