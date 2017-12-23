@@ -1,0 +1,80 @@
+{
+    "charmander": {
+        "number": "004",
+        "type": [
+            "fire"
+        ],
+        "text": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
+        "height": "2.00",
+        "category": "lizard",
+        "abilities": [
+            "growl",
+            "scratch",
+            "dragon rage",
+            "smokescreen"
+        ],
+        "stats": {
+            "hp": 2,
+            "attack": 3,
+            "defense": 2,
+            "sp-attack": 3,
+            "sp-defense": 2,
+            "speed": 4
+        },
+        "to": "charmeleon"
+    },
+    "charmeleon": {
+        "number": "005",
+        "type": [
+            "fire"
+        ],
+        "text": "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.",
+        "height": "3.07",
+        "category": "flame",
+        "abilities": [
+            "growl",
+            "ember",
+            "dragon rage",
+            "smokescreen",
+            "fire fang"
+        ],
+        "stats": {
+            "hp": 3,
+            "attack": 3,
+            "defense": 3,
+            "sp-attack": 4,
+            "sp-defense": 3,
+            "speed": 4
+        },
+        "from": "charmeleon",
+        "to": "charizard"
+    },
+    "charizard": {
+        "number": "006",
+        "type": [
+            "fire",
+            "flying"
+        ],
+        "text": "Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.",
+        "height": "5.07",
+        "category": "flame",
+        "abilities": [
+            "growl",
+            "ember",
+            "dragon rage",
+            "smokescreen",
+            "fire fang",
+            "wing attack",
+            "heat wave"
+        ],
+        "stats": {
+            "hp": 3,
+            "attack": 4,
+            "defense": 3,
+            "sp-attack": 5,
+            "sp-defense": 4,
+            "speed": 5
+        },
+        "from": "charmeleon"
+    }
+}
