@@ -15,6 +15,7 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "babel-preset-react-app": "^3.1.0"
+    "babel-preset-react-app": "^3.1.0",
+    "node-sass": "^4.7.2"
   }
 }
