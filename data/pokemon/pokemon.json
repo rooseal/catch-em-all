@@ -1,4 +1,83 @@
 {
+    "bulbasaur": {
+        "number": "001",
+        "type": [
+            "grass",
+            "poison"
+        ],
+        "text": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
+        "height": "0.7",
+        "category": "seed",
+        "abilities": [
+            "tackle",
+            "leech seed",
+            "vine whip",
+            "poison powder"
+        ],
+        "stats": {
+            "hp": 2,
+            "attack": 3,
+            "defense": 2,
+            "sp-attack": 3,
+            "sp-defense": 3,
+            "speed": 3
+        },
+        "to": "ivysaur"
+    },
+    "ivysaur": {
+        "number": "002",
+        "type": [
+            "grass",
+            "poison"
+        ],
+        "text": "To support its weight, Ivysaur's legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it's a sign that the bud will bloom into a large flower soon.",
+        "height": "1",
+        "category": "seed",
+        "abilities": [
+            "leech seed",
+            "vine whip",
+            "poison powder",
+            "take down",
+            "razor leaf"
+        ],
+        "stats": {
+            "hp": 3,
+            "attack": 3,
+            "defense": 3,
+            "sp-attack": 4,
+            "sp-defense": 3,
+            "speed": 3
+        },
+        "from": "bulbasaur",
+        "to": "venesaur"
+    },
+    "venesaur": {
+        "number": "003",
+        "type": [
+            "grass",
+            "poison"
+        ],
+        "text": "There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.",
+        "height": "2",
+        "category": "seed",
+        "abilities": [
+            "leech seed",
+            "vine whip",
+            "poison powder",
+            "take down",
+            "razor leaf",
+            "synthesis"
+        ],
+        "stats": {
+            "hp": 3,
+            "attack": 4,
+            "defense": 4,
+            "sp-attack": 5,
+            "sp-defense": 4,
+            "speed": 4
+        },
+        "from": "ivysaur"
+    },
     "charmander": {
         "number": "004",
         "type": [
@@ -76,5 +155,81 @@
             "speed": 5
         },
         "from": "charmeleon"
+    },
+    "squirtle": {
+        "number": "007",
+        "type": [
+            "water"
+        ],
+        "text": "Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
+        "height": "0.05",
+        "category": "tiny turtle",
+        "abilities": [
+            "tail whip",
+            "water gun",
+            "bubble",
+            "protect"
+        ],
+        "stats": {
+            "hp": 2,
+            "attack": 3,
+            "defense": 3,
+            "sp-attack": 2,
+            "sp-defense": 3,
+            "speed": 2
+        },
+        "to": "wartortle"
+    },
+    "wartortle": {
+        "number": "008",
+        "type": [
+            "water"
+        ],
+        "text": "Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon's toughness as a battler.",
+        "height": "1",
+        "category": "turtle",
+        "abilities": [
+            "water pulse",
+            "water gun",
+            "bubble",
+            "protect",
+            "aqua tail"
+        ],
+        "stats": {
+            "hp": 3,
+            "attack": 3,
+            "defense": 4,
+            "sp-attack": 3,
+            "sp-defense": 3,
+            "speed": 3
+        },
+        "to": "blastoise",
+        "from": "squirtle"
+    },
+    "blastoise": {
+        "number": "009",
+        "type": [
+            "water"
+        ],
+        "text": "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet.",
+        "height": "1.6",
+        "category": "turtle",
+        "abilities": [
+            "water pulse",
+            "water gun",
+            "bubble",
+            "protect",
+            "aqua tail",
+            "hydro pump"
+        ],
+        "stats": {
+            "hp": 3,
+            "attack": 4,
+            "defense": 4,
+            "sp-attack": 4,
+            "sp-defense": 4,
+            "speed": 4
+        },
+        "from": "wartortle"
     }
 }
