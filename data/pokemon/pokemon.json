@@ -1,235 +1,3393 @@
 {
     "bulbasaur": {
-        "number": "001",
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "text": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
-        "height": "0.7",
-        "category": "seed",
-        "abilities": [
-            "tackle",
-            "leech seed",
-            "vine whip",
-            "poison powder"
-        ],
-        "stats": {
-            "hp": 2,
-            "attack": 3,
-            "defense": 2,
-            "sp-attack": 3,
-            "sp-defense": 3,
-            "speed": 3
-        },
-        "to": "ivysaur"
+      "number": "001",
+      "type": [
+        "grass",
+        "poison"
+      ],
+      "height": "2' 04\"",
+      "category": "seed",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "bulbasaur",
+        "ivysaur",
+        "venusaur"
+      ]
     },
     "ivysaur": {
-        "number": "002",
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "text": "To support its weight, Ivysaur's legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it's a sign that the bud will bloom into a large flower soon.",
-        "height": "1",
-        "category": "seed",
-        "abilities": [
-            "leech seed",
-            "vine whip",
-            "poison powder",
-            "take down",
-            "razor leaf"
-        ],
-        "stats": {
-            "hp": 3,
-            "attack": 3,
-            "defense": 3,
-            "sp-attack": 4,
-            "sp-defense": 3,
-            "speed": 3
-        },
-        "from": "bulbasaur",
-        "to": "venesaur"
+      "number": "002",
+      "type": [
+        "grass",
+        "poison"
+      ],
+      "height": "3' 03\"",
+      "category": "seed",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "bulbasaur",
+        "ivysaur",
+        "venusaur"
+      ]
     },
-    "venesaur": {
-        "number": "003",
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "text": "There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.",
-        "height": "2",
-        "category": "seed",
-        "abilities": [
-            "leech seed",
-            "vine whip",
-            "poison powder",
-            "take down",
-            "razor leaf",
-            "synthesis"
-        ],
-        "stats": {
-            "hp": 3,
-            "attack": 4,
-            "defense": 4,
-            "sp-attack": 5,
-            "sp-defense": 4,
-            "speed": 4
-        },
-        "from": "ivysaur"
+    "venusaur": {
+      "number": "003",
+      "type": [
+        "grass",
+        "poison",
+        "grass",
+        "poison"
+      ],
+      "height": "6' 07\"",
+      "category": "seed",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 4
+      },
+      "evolutions": [
+        "bulbasaur",
+        "ivysaur",
+        "venusaur"
+      ]
     },
     "charmander": {
-        "number": "004",
-        "type": [
-            "fire"
-        ],
-        "text": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
-        "height": "2.00",
-        "category": "lizard",
-        "abilities": [
-            "growl",
-            "scratch",
-            "dragon rage",
-            "smokescreen"
-        ],
-        "stats": {
-            "hp": 2,
-            "attack": 3,
-            "defense": 2,
-            "sp-attack": 3,
-            "sp-defense": 2,
-            "speed": 4
-        },
-        "to": "charmeleon"
+      "number": "004",
+      "type": [
+        "fire"
+      ],
+      "height": "2' 00\"",
+      "category": "lizard",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "charmander",
+        "charmeleon",
+        "charizard"
+      ]
     },
     "charmeleon": {
-        "number": "005",
-        "type": [
-            "fire"
-        ],
-        "text": "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.",
-        "height": "3.07",
-        "category": "flame",
-        "abilities": [
-            "growl",
-            "ember",
-            "dragon rage",
-            "smokescreen",
-            "fire fang"
-        ],
-        "stats": {
-            "hp": 3,
-            "attack": 3,
-            "defense": 3,
-            "sp-attack": 4,
-            "sp-defense": 3,
-            "speed": 4
-        },
-        "from": "charmeleon",
-        "to": "charizard"
+      "number": "005",
+      "type": [
+        "fire"
+      ],
+      "height": "3' 07\"",
+      "category": "flame",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "charmander",
+        "charmeleon",
+        "charizard"
+      ]
     },
     "charizard": {
-        "number": "006",
-        "type": [
-            "fire",
-            "flying"
-        ],
-        "text": "Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.",
-        "height": "5.07",
-        "category": "flame",
-        "abilities": [
-            "growl",
-            "ember",
-            "dragon rage",
-            "smokescreen",
-            "fire fang",
-            "wing attack",
-            "heat wave"
-        ],
-        "stats": {
-            "hp": 3,
-            "attack": 4,
-            "defense": 3,
-            "sp-attack": 5,
-            "sp-defense": 4,
-            "speed": 5
-        },
-        "from": "charmeleon"
+      "number": "006",
+      "type": [
+        "fire",
+        "flying",
+        "fire",
+        "dragon",
+        "fire",
+        "flying"
+      ],
+      "height": "5' 07\"",
+      "category": "flame",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 5
+      },
+      "evolutions": [
+        "charmander",
+        "charmeleon",
+        "charizard"
+      ]
     },
     "squirtle": {
-        "number": "007",
-        "type": [
-            "water"
-        ],
-        "text": "Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
-        "height": "0.05",
-        "category": "tiny turtle",
-        "abilities": [
-            "tail whip",
-            "water gun",
-            "bubble",
-            "protect"
-        ],
-        "stats": {
-            "hp": 2,
-            "attack": 3,
-            "defense": 3,
-            "sp-attack": 2,
-            "sp-defense": 3,
-            "speed": 2
-        },
-        "to": "wartortle"
+      "number": "007",
+      "type": [
+        "water"
+      ],
+      "height": "1' 08\"",
+      "category": "tiny turtle",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 2
+      },
+      "evolutions": [
+        "squirtle",
+        "wartortle",
+        "blastoise"
+      ]
     },
     "wartortle": {
-        "number": "008",
-        "type": [
-            "water"
-        ],
-        "text": "Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon's toughness as a battler.",
-        "height": "1",
-        "category": "turtle",
-        "abilities": [
-            "water pulse",
-            "water gun",
-            "bubble",
-            "protect",
-            "aqua tail"
-        ],
-        "stats": {
-            "hp": 3,
-            "attack": 3,
-            "defense": 4,
-            "sp-attack": 3,
-            "sp-defense": 3,
-            "speed": 3
-        },
-        "to": "blastoise",
-        "from": "squirtle"
+      "number": "008",
+      "type": [
+        "water"
+      ],
+      "height": "3' 03\"",
+      "category": "turtle",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "squirtle",
+        "wartortle",
+        "blastoise"
+      ]
     },
     "blastoise": {
-        "number": "009",
-        "type": [
-            "water"
-        ],
-        "text": "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet.",
-        "height": "1.6",
-        "category": "turtle",
-        "abilities": [
-            "water pulse",
-            "water gun",
-            "bubble",
-            "protect",
-            "aqua tail",
-            "hydro pump"
-        ],
-        "stats": {
-            "hp": 3,
-            "attack": 4,
-            "defense": 4,
-            "sp-attack": 4,
-            "sp-defense": 4,
-            "speed": 4
-        },
-        "from": "wartortle"
+      "number": "009",
+      "type": [
+        "water",
+        "water"
+      ],
+      "height": "5' 03\"",
+      "category": "shellfish",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 4,
+        "spDefense": 4,
+        "speed": 4
+      },
+      "evolutions": [
+        "squirtle",
+        "wartortle",
+        "blastoise"
+      ]
+    },
+    "caterpie": {
+      "number": "010",
+      "type": [
+        "bug"
+      ],
+      "height": "1' 00\"",
+      "category": "worm",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 1,
+        "spDefense": 1,
+        "speed": 3
+      },
+      "evolutions": [
+        "caterpie",
+        "metapod",
+        "butterfree"
+      ]
+    },
+    "metapod": {
+      "number": "011",
+      "type": [
+        "bug"
+      ],
+      "height": "2' 04\"",
+      "category": "cocoon",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 3,
+        "spAttack": 1,
+        "spDefense": 1,
+        "speed": 2
+      },
+      "evolutions": [
+        "caterpie",
+        "metapod",
+        "butterfree"
+      ]
+    },
+    "butterfree": {
+      "number": "012",
+      "type": [
+        "bug",
+        "flying"
+      ],
+      "height": "3' 07\"",
+      "category": "butterfly",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "caterpie",
+        "metapod",
+        "butterfree"
+      ]
+    },
+    "weedle": {
+      "number": "013",
+      "type": [
+        "bug",
+        "poison"
+      ],
+      "height": "1' 00\"",
+      "category": "hairy bug",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 1,
+        "spDefense": 1,
+        "speed": 3
+      },
+      "evolutions": [
+        "weedle",
+        "kakuna",
+        "beedrill"
+      ]
+    },
+    "kakuna": {
+      "number": "014",
+      "type": [
+        "bug",
+        "poison"
+      ],
+      "height": "2' 00\"",
+      "category": "cocoon",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 2,
+        "spAttack": 1,
+        "spDefense": 1,
+        "speed": 2
+      },
+      "evolutions": [
+        "weedle",
+        "kakuna",
+        "beedrill"
+      ]
+    },
+    "beedrill": {
+      "number": "015",
+      "type": [
+        "bug",
+        "poison",
+        "bug",
+        "poison"
+      ],
+      "height": "3' 03\"",
+      "category": "poison bee",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "weedle",
+        "kakuna",
+        "beedrill"
+      ]
+    },
+    "pidgey": {
+      "number": "016",
+      "type": [
+        "normal",
+        "flying"
+      ],
+      "height": "1' 00\"",
+      "category": "tiny bird",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "pidgey",
+        "pidgeotto",
+        "pidgeot"
+      ]
+    },
+    "pidgeotto": {
+      "number": "017",
+      "type": [
+        "normal",
+        "flying"
+      ],
+      "height": "3' 07\"",
+      "category": "bird",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "pidgey",
+        "pidgeotto",
+        "pidgeot"
+      ]
+    },
+    "pidgeot": {
+      "number": "018",
+      "type": [
+        "normal",
+        "flying",
+        "normal",
+        "flying"
+      ],
+      "height": "4' 11\"",
+      "category": "bird",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "pidgey",
+        "pidgeotto",
+        "pidgeot"
+      ]
+    },
+    "rattata": {
+      "number": "019",
+      "type": [
+        "normal",
+        "dark",
+        "normal"
+      ],
+      "height": "1' 00\"",
+      "category": "mouse",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 1,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "rattata",
+        "raticate"
+      ]
+    },
+    "raticate": {
+      "number": "020",
+      "type": [
+        "normal",
+        "dark",
+        "normal"
+      ],
+      "height": "2' 04\"",
+      "category": "mouse",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "rattata",
+        "raticate"
+      ]
+    },
+    "spearow": {
+      "number": "021",
+      "type": [
+        "normal",
+        "flying"
+      ],
+      "height": "1' 00\"",
+      "category": "tiny bird",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 1,
+        "speed": 4
+      },
+      "evolutions": [
+        "spearow",
+        "fearow"
+      ]
+    },
+    "fearow": {
+      "number": "022",
+      "type": [
+        "normal",
+        "flying"
+      ],
+      "height": "3' 11\"",
+      "category": "beak",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "spearow",
+        "fearow"
+      ]
+    },
+    "ekans": {
+      "number": "023",
+      "type": [
+        "poison"
+      ],
+      "height": "6' 07\"",
+      "category": "snake",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "ekans",
+        "arbok"
+      ]
+    },
+    "arbok": {
+      "number": "024",
+      "type": [
+        "poison"
+      ],
+      "height": "11' 06\"",
+      "category": "cobra",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "ekans",
+        "arbok"
+      ]
+    },
+    "pikachu": {
+      "number": "025",
+      "type": [
+        "electric"
+      ],
+      "height": "1' 04\"",
+      "category": "mouse",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "pichu",
+        "pikachu",
+        "raichu"
+      ]
+    },
+    "raichu": {
+      "number": "026",
+      "type": [
+        "electric",
+        "electric",
+        "psychic"
+      ],
+      "height": "2' 07\"",
+      "category": "mouse",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 6
+      },
+      "evolutions": [
+        "pichu",
+        "pikachu",
+        "raichu"
+      ]
+    },
+    "sandshrew": {
+      "number": "027",
+      "type": [
+        "ground",
+        "ice",
+        "steel"
+      ],
+      "height": "2' 00\"",
+      "category": "mouse",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 1,
+        "spDefense": 1,
+        "speed": 2
+      },
+      "evolutions": [
+        "sandshrew",
+        "sandslash"
+      ]
+    },
+    "sandslash": {
+      "number": "028",
+      "type": [
+        "ground",
+        "ice",
+        "steel"
+      ],
+      "height": "3' 03\"",
+      "category": "mouse",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 5,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "sandshrew",
+        "sandslash"
+      ]
+    },
+    "nidoran-female": {
+      "number": "029",
+      "type": [
+        "poison"
+      ],
+      "height": "1' 04\"",
+      "category": "poison pin",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "nidoran♀",
+        "nidorina",
+        "nidoqueen"
+      ]
+    },
+    "nidorina": {
+      "number": "030",
+      "type": [
+        "poison"
+      ],
+      "height": "2' 07\"",
+      "category": "poison pin",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "nidoran♀",
+        "nidorina",
+        "nidoqueen"
+      ]
+    },
+    "nidoqueen": {
+      "number": "031",
+      "type": [
+        "poison",
+        "ground"
+      ],
+      "height": "4' 03\"",
+      "category": "drill",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 4,
+        "spDefense": 4,
+        "speed": 4
+      },
+      "evolutions": [
+        "nidoran♀",
+        "nidorina",
+        "nidoqueen"
+      ]
+    },
+    "nidoran-male": {
+      "number": "032",
+      "type": [
+        "poison"
+      ],
+      "height": "1' 08\"",
+      "category": "poison pin",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "nidoran♂",
+        "nidorino",
+        "nidoking"
+      ]
+    },
+    "nidorino": {
+      "number": "033",
+      "type": [
+        "poison"
+      ],
+      "height": "2' 11\"",
+      "category": "poison pin",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "nidoran♂",
+        "nidorino",
+        "nidoking"
+      ]
+    },
+    "nidoking": {
+      "number": "034",
+      "type": [
+        "poison",
+        "ground"
+      ],
+      "height": "4' 07\"",
+      "category": "drill",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "nidoran♂",
+        "nidorino",
+        "nidoking"
+      ]
+    },
+    "clefairy": {
+      "number": "035",
+      "type": [
+        "fairy"
+      ],
+      "height": "2' 00\"",
+      "category": "fairy",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 2
+      },
+      "evolutions": [
+        "cleffa",
+        "clefairy",
+        "clefable"
+      ]
+    },
+    "clefable": {
+      "number": "036",
+      "type": [
+        "fairy"
+      ],
+      "height": "4' 03\"",
+      "category": "fairy",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 3
+      },
+      "evolutions": [
+        "cleffa",
+        "clefairy",
+        "clefable"
+      ]
+    },
+    "vulpix": {
+      "number": "037",
+      "type": [
+        "fire",
+        "ice"
+      ],
+      "height": "2' 00\"",
+      "category": "fox",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "vulpix",
+        "ninetales"
+      ]
+    },
+    "ninetales": {
+      "number": "038",
+      "type": [
+        "fire",
+        "ice",
+        "fairy"
+      ],
+      "height": "3' 07\"",
+      "category": "fox",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 4,
+        "speed": 5
+      },
+      "evolutions": [
+        "vulpix",
+        "ninetales"
+      ]
+    },
+    "jigglypuff": {
+      "number": "039",
+      "type": [
+        "normal",
+        "fairy"
+      ],
+      "height": "1' 08\"",
+      "category": "balloon",
+      "abilities": [],
+      "stats": {
+        "hp": 5,
+        "attack": 2,
+        "defense": 1,
+        "spAttack": 2,
+        "spDefense": 1,
+        "speed": 1
+      },
+      "evolutions": [
+        "igglybuff",
+        "jigglypuff",
+        "wigglytuff"
+      ]
+    },
+    "wigglytuff": {
+      "number": "040",
+      "type": [
+        "normal",
+        "fairy"
+      ],
+      "height": "3' 03\"",
+      "category": "balloon",
+      "abilities": [],
+      "stats": {
+        "hp": 5,
+        "attack": 4,
+        "defense": 2,
+        "spAttack": 4,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "igglybuff",
+        "jigglypuff",
+        "wigglytuff"
+      ]
+    },
+    "zubat": {
+      "number": "041",
+      "type": [
+        "poison",
+        "flying"
+      ],
+      "height": "2' 07\"",
+      "category": "bat",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 1,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "zubat",
+        "golbat",
+        "crobat"
+      ]
+    },
+    "golbat": {
+      "number": "042",
+      "type": [
+        "poison",
+        "flying"
+      ],
+      "height": "5' 03\"",
+      "category": "bat",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "zubat",
+        "golbat",
+        "crobat"
+      ]
+    },
+    "oddish": {
+      "number": "043",
+      "type": [
+        "grass",
+        "poison"
+      ],
+      "height": "1' 08\"",
+      "category": "weed",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 2
+      },
+      "evolutions": [
+        "oddish",
+        "gloom",
+        "vileplume",
+        "bellossom"
+      ]
+    },
+    "gloom": {
+      "number": "044",
+      "type": [
+        "grass",
+        "poison"
+      ],
+      "height": "2' 07\"",
+      "category": "weed",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 2
+      },
+      "evolutions": [
+        "oddish",
+        "gloom",
+        "vileplume",
+        "bellossom"
+      ]
+    },
+    "vileplume": {
+      "number": "045",
+      "type": [
+        "grass",
+        "poison"
+      ],
+      "height": "3' 11\"",
+      "category": "flower",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 3
+      },
+      "evolutions": [
+        "oddish",
+        "gloom",
+        "vileplume",
+        "bellossom"
+      ]
+    },
+    "paras": {
+      "number": "046",
+      "type": [
+        "bug",
+        "grass"
+      ],
+      "height": "1' 00\"",
+      "category": "mushroom",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "paras",
+        "parasect"
+      ]
+    },
+    "parasect": {
+      "number": "047",
+      "type": [
+        "bug",
+        "grass"
+      ],
+      "height": "3' 03\"",
+      "category": "mushroom",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 2
+      },
+      "evolutions": [
+        "paras",
+        "parasect"
+      ]
+    },
+    "venonat": {
+      "number": "048",
+      "type": [
+        "bug",
+        "poison"
+      ],
+      "height": "3' 03\"",
+      "category": "insect",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "venonat",
+        "venomoth"
+      ]
+    },
+    "venomoth": {
+      "number": "049",
+      "type": [
+        "bug",
+        "poison"
+      ],
+      "height": "4' 11\"",
+      "category": "poison moth",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "venonat",
+        "venomoth"
+      ]
+    },
+    "diglett": {
+      "number": "050",
+      "type": [
+        "ground",
+        "ground",
+        "steel"
+      ],
+      "height": "0' 08\"",
+      "category": "mole",
+      "abilities": [],
+      "stats": {
+        "hp": 1,
+        "attack": 3,
+        "defense": 1,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "diglett",
+        "dugtrio"
+      ]
+    },
+    "dugtrio": {
+      "number": "051",
+      "type": [
+        "ground",
+        "ground",
+        "steel"
+      ],
+      "height": "2' 04\"",
+      "category": "mole",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 6
+      },
+      "evolutions": [
+        "diglett",
+        "dugtrio"
+      ]
+    },
+    "meowth": {
+      "number": "052",
+      "type": [
+        "normal",
+        "dark"
+      ],
+      "height": "1' 04\"",
+      "category": "scratch cat",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "meowth",
+        "persian"
+      ]
+    },
+    "persian": {
+      "number": "053",
+      "type": [
+        "normal",
+        "dark"
+      ],
+      "height": "3' 03\"",
+      "category": "classy cat",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 6
+      },
+      "evolutions": [
+        "meowth",
+        "persian"
+      ]
+    },
+    "psyduck": {
+      "number": "054",
+      "type": [
+        "water"
+      ],
+      "height": "2' 07\"",
+      "category": "duck",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "psyduck",
+        "golduck"
+      ]
+    },
+    "golduck": {
+      "number": "055",
+      "type": [
+        "water"
+      ],
+      "height": "5' 07\"",
+      "category": "duck",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "psyduck",
+        "golduck"
+      ]
+    },
+    "mankey": {
+      "number": "056",
+      "type": [
+        "fighting"
+      ],
+      "height": "1' 08\"",
+      "category": "pig monkey",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "mankey",
+        "primeape"
+      ]
+    },
+    "primeape": {
+      "number": "057",
+      "type": [
+        "fighting"
+      ],
+      "height": "3' 03\"",
+      "category": "pig monkey",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "mankey",
+        "primeape"
+      ]
+    },
+    "growlithe": {
+      "number": "058",
+      "type": [
+        "fire"
+      ],
+      "height": "2' 04\"",
+      "category": "puppy",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 2,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "growlithe",
+        "arcanine"
+      ]
+    },
+    "arcanine": {
+      "number": "059",
+      "type": [
+        "fire"
+      ],
+      "height": "6' 03\"",
+      "category": "legendary",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 6,
+        "defense": 4,
+        "spAttack": 5,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "growlithe",
+        "arcanine"
+      ]
+    },
+    "poliwag": {
+      "number": "060",
+      "type": [
+        "water"
+      ],
+      "height": "2' 00\"",
+      "category": "tadpole",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "poliwag",
+        "poliwhirl",
+        "poliwrath",
+        "politoed"
+      ]
+    },
+    "poliwhirl": {
+      "number": "061",
+      "type": [
+        "water"
+      ],
+      "height": "3' 03\"",
+      "category": "tadpole",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "poliwag",
+        "poliwhirl",
+        "poliwrath",
+        "politoed"
+      ]
+    },
+    "poliwrath": {
+      "number": "062",
+      "type": [
+        "water",
+        "fighting"
+      ],
+      "height": "4' 03\"",
+      "category": "tadpole",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 4,
+        "speed": 4
+      },
+      "evolutions": [
+        "poliwag",
+        "poliwhirl",
+        "poliwrath",
+        "politoed"
+      ]
+    },
+    "abra": {
+      "number": "063",
+      "type": [
+        "psychic"
+      ],
+      "height": "2' 11\"",
+      "category": "psi",
+      "abilities": [],
+      "stats": {
+        "hp": 1,
+        "attack": 1,
+        "defense": 1,
+        "spAttack": 5,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "abra",
+        "kadabra",
+        "alakazam"
+      ]
+    },
+    "kadabra": {
+      "number": "064",
+      "type": [
+        "psychic"
+      ],
+      "height": "4' 03\"",
+      "category": "psi",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 6,
+        "spDefense": 3,
+        "speed": 6
+      },
+      "evolutions": [
+        "abra",
+        "kadabra",
+        "alakazam"
+      ]
+    },
+    "alakazam": {
+      "number": "065",
+      "type": [
+        "psychic",
+        "psychic"
+      ],
+      "height": "4' 11\"",
+      "category": "psi",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 7,
+        "spDefense": 4,
+        "speed": 6
+      },
+      "evolutions": [
+        "abra",
+        "kadabra",
+        "alakazam"
+      ]
+    },
+    "machop": {
+      "number": "066",
+      "type": [
+        "fighting"
+      ],
+      "height": "2' 07\"",
+      "category": "superpower",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "machop",
+        "machoke",
+        "machamp"
+      ]
+    },
+    "machoke": {
+      "number": "067",
+      "type": [
+        "fighting"
+      ],
+      "height": "4' 11\"",
+      "category": "superpower",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "machop",
+        "machoke",
+        "machamp"
+      ]
+    },
+    "machamp": {
+      "number": "068",
+      "type": [
+        "fighting"
+      ],
+      "height": "5' 03\"",
+      "category": "superpower",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 7,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 4,
+        "speed": 3
+      },
+      "evolutions": [
+        "machop",
+        "machoke",
+        "machamp"
+      ]
+    },
+    "bellsprout": {
+      "number": "069",
+      "type": [
+        "grass",
+        "poison"
+      ],
+      "height": "2' 04\"",
+      "category": "flower",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 2,
+        "spAttack": 3,
+        "spDefense": 1,
+        "speed": 2
+      },
+      "evolutions": [
+        "bellsprout",
+        "weepinbell",
+        "victreebel"
+      ]
+    },
+    "weepinbell": {
+      "number": "070",
+      "type": [
+        "grass",
+        "poison"
+      ],
+      "height": "3' 03\"",
+      "category": "flycatcher",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 2,
+        "spAttack": 4,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "bellsprout",
+        "weepinbell",
+        "victreebel"
+      ]
+    },
+    "victreebel": {
+      "number": "071",
+      "type": [
+        "grass",
+        "poison"
+      ],
+      "height": "5' 07\"",
+      "category": "flycatcher",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "bellsprout",
+        "weepinbell",
+        "victreebel"
+      ]
+    },
+    "tentacool": {
+      "number": "072",
+      "type": [
+        "water",
+        "poison"
+      ],
+      "height": "2' 11\"",
+      "category": "jellyfish",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 4,
+        "speed": 4
+      },
+      "evolutions": [
+        "tentacool",
+        "tentacruel"
+      ]
+    },
+    "tentacruel": {
+      "number": "073",
+      "type": [
+        "water",
+        "poison"
+      ],
+      "height": "5' 03\"",
+      "category": "jellyfish",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 5,
+        "speed": 5
+      },
+      "evolutions": [
+        "tentacool",
+        "tentacruel"
+      ]
+    },
+    "geodude": {
+      "number": "074",
+      "type": [
+        "rock",
+        "ground",
+        "rock",
+        "electric"
+      ],
+      "height": "1' 04\"",
+      "category": "rock",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 1,
+        "spDefense": 1,
+        "speed": 1
+      },
+      "evolutions": [
+        "geodude",
+        "graveler",
+        "golem"
+      ]
+    },
+    "graveler": {
+      "number": "075",
+      "type": [
+        "rock",
+        "ground",
+        "rock",
+        "electric"
+      ],
+      "height": "3' 03\"",
+      "category": "rock",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 5,
+        "defense": 5,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "geodude",
+        "graveler",
+        "golem"
+      ]
+    },
+    "golem": {
+      "number": "076",
+      "type": [
+        "rock",
+        "ground",
+        "rock",
+        "electric"
+      ],
+      "height": "4' 07\"",
+      "category": "megaton",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 6,
+        "defense": 6,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "geodude",
+        "graveler",
+        "golem"
+      ]
+    },
+    "ponyta": {
+      "number": "077",
+      "type": [
+        "fire"
+      ],
+      "height": "3' 03\"",
+      "category": "fire horse",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "ponyta",
+        "rapidash"
+      ]
+    },
+    "rapidash": {
+      "number": "078",
+      "type": [
+        "fire"
+      ],
+      "height": "5' 07\"",
+      "category": "fire horse",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 6
+      },
+      "evolutions": [
+        "ponyta",
+        "rapidash"
+      ]
+    },
+    "slowpoke": {
+      "number": "079",
+      "type": [
+        "water",
+        "psychic"
+      ],
+      "height": "3' 11\"",
+      "category": "dopey",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 1
+      },
+      "evolutions": [
+        "slowpoke",
+        "slowbro",
+        "slowking"
+      ]
+    },
+    "slowbro": {
+      "number": "080",
+      "type": [
+        "water",
+        "psychic",
+        "water",
+        "psychic"
+      ],
+      "height": "5' 03\"",
+      "category": "hermit crab",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 4,
+        "defense": 5,
+        "spAttack": 5,
+        "spDefense": 3,
+        "speed": 2
+      },
+      "evolutions": [
+        "slowpoke",
+        "slowbro",
+        "slowking"
+      ]
+    },
+    "magnemite": {
+      "number": "081",
+      "type": [
+        "electric",
+        "steel"
+      ],
+      "height": "1' 00\"",
+      "category": "magnet",
+      "abilities": [],
+      "stats": {
+        "hp": 1,
+        "attack": 2,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "magnemite",
+        "magneton",
+        "magnezone"
+      ]
+    },
+    "magneton": {
+      "number": "082",
+      "type": [
+        "electric",
+        "steel"
+      ],
+      "height": "3' 03\"",
+      "category": "magnet",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 4,
+        "spAttack": 6,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "magnemite",
+        "magneton",
+        "magnezone"
+      ]
+    },
+    "farfetchd": {
+      "number": "083",
+      "type": [
+        "normal",
+        "flying"
+      ],
+      "height": "2' 07\"",
+      "category": "wild duck",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "farfetch'd"
+      ]
+    },
+    "doduo": {
+      "number": "084",
+      "type": [
+        "normal",
+        "flying"
+      ],
+      "height": "4' 07\"",
+      "category": "twin bird",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "doduo",
+        "dodrio"
+      ]
+    },
+    "dodrio": {
+      "number": "085",
+      "type": [
+        "normal",
+        "flying"
+      ],
+      "height": "5' 11\"",
+      "category": "triple bird",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 6,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "doduo",
+        "dodrio"
+      ]
+    },
+    "seel": {
+      "number": "086",
+      "type": [
+        "water"
+      ],
+      "height": "3' 07\"",
+      "category": "sea lion",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 2,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "seel",
+        "dewgong"
+      ]
+    },
+    "dewgong": {
+      "number": "087",
+      "type": [
+        "water",
+        "ice"
+      ],
+      "height": "5' 07\"",
+      "category": "sea lion",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 4,
+        "speed": 4
+      },
+      "evolutions": [
+        "seel",
+        "dewgong"
+      ]
+    },
+    "grimer": {
+      "number": "088",
+      "type": [
+        "poison",
+        "poison",
+        "dark"
+      ],
+      "height": "2' 11\"",
+      "category": "sludge",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "grimer",
+        "muk"
+      ]
+    },
+    "muk": {
+      "number": "089",
+      "type": [
+        "poison",
+        "poison",
+        "dark"
+      ],
+      "height": "3' 11\"",
+      "category": "sludge",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 4,
+        "speed": 3
+      },
+      "evolutions": [
+        "grimer",
+        "muk"
+      ]
+    },
+    "shellder": {
+      "number": "090",
+      "type": [
+        "water"
+      ],
+      "height": "1' 00\"",
+      "category": "bivalve",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 4,
+        "spAttack": 2,
+        "spDefense": 1,
+        "speed": 2
+      },
+      "evolutions": [
+        "shellder",
+        "cloyster"
+      ]
+    },
+    "cloyster": {
+      "number": "091",
+      "type": [
+        "water",
+        "ice"
+      ],
+      "height": "4' 11\"",
+      "category": "bivalve",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 5,
+        "defense": 8,
+        "spAttack": 4,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "shellder",
+        "cloyster"
+      ]
+    },
+    "gastly": {
+      "number": "092",
+      "type": [
+        "ghost",
+        "poison"
+      ],
+      "height": "4' 03\"",
+      "category": "gas",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 5,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "gastly",
+        "haunter",
+        "gengar"
+      ]
+    },
+    "haunter": {
+      "number": "093",
+      "type": [
+        "ghost",
+        "poison"
+      ],
+      "height": "5' 03\"",
+      "category": "gas",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 6,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "gastly",
+        "haunter",
+        "gengar"
+      ]
+    },
+    "gengar": {
+      "number": "094",
+      "type": [
+        "ghost",
+        "poison",
+        "ghost",
+        "poison"
+      ],
+      "height": "4' 11\"",
+      "category": "shadow",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 6,
+        "spDefense": 3,
+        "speed": 6
+      },
+      "evolutions": [
+        "gastly",
+        "haunter",
+        "gengar"
+      ]
+    },
+    "onix": {
+      "number": "095",
+      "type": [
+        "rock",
+        "ground"
+      ],
+      "height": "28' 10\"",
+      "category": "rock snake",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 7,
+        "spAttack": 1,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "onix",
+        "steelix"
+      ]
+    },
+    "drowzee": {
+      "number": "096",
+      "type": [
+        "psychic"
+      ],
+      "height": "3' 03\"",
+      "category": "hypnosis",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 4,
+        "speed": 2
+      },
+      "evolutions": [
+        "drowzee",
+        "hypno"
+      ]
+    },
+    "hypno": {
+      "number": "097",
+      "type": [
+        "psychic"
+      ],
+      "height": "5' 03\"",
+      "category": "hypnosis",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 5,
+        "speed": 4
+      },
+      "evolutions": [
+        "drowzee",
+        "hypno"
+      ]
+    },
+    "krabby": {
+      "number": "098",
+      "type": [
+        "water"
+      ],
+      "height": "1' 04\"",
+      "category": "river crab",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 1,
+        "spDefense": 1,
+        "speed": 3
+      },
+      "evolutions": [
+        "krabby",
+        "kingler"
+      ]
+    },
+    "kingler": {
+      "number": "099",
+      "type": [
+        "water"
+      ],
+      "height": "4' 03\"",
+      "category": "pincer",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 7,
+        "defense": 5,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 4
+      },
+      "evolutions": [
+        "krabby",
+        "kingler"
+      ]
+    },
+    "voltorb": {
+      "number": "100",
+      "type": [
+        "electric"
+      ],
+      "height": "1' 08\"",
+      "category": "ball",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 2,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "voltorb",
+        "electrode"
+      ]
+    },
+    "electrode": {
+      "number": "101",
+      "type": [
+        "electric"
+      ],
+      "height": "3' 11\"",
+      "category": "ball",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 7
+      },
+      "evolutions": [
+        "voltorb",
+        "electrode"
+      ]
+    },
+    "exeggcute": {
+      "number": "102",
+      "type": [
+        "grass",
+        "psychic"
+      ],
+      "height": "1' 04\"",
+      "category": "egg",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 2,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "exeggcute",
+        "exeggutor"
+      ]
+    },
+    "exeggutor": {
+      "number": "103",
+      "type": [
+        "grass",
+        "psychic",
+        "grass",
+        "dragon"
+      ],
+      "height": "6' 07\"",
+      "category": "coconut",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 6,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "exeggcute",
+        "exeggutor"
+      ]
+    },
+    "cubone": {
+      "number": "104",
+      "type": [
+        "ground"
+      ],
+      "height": "1' 04\"",
+      "category": "lonely",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 4,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "cubone",
+        "marowak"
+      ]
+    },
+    "marowak": {
+      "number": "105",
+      "type": [
+        "ground",
+        "fire",
+        "ghost"
+      ],
+      "height": "3' 03\"",
+      "category": "bone keeper",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 5,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "cubone",
+        "marowak"
+      ]
+    },
+    "hitmonlee": {
+      "number": "106",
+      "type": [
+        "fighting"
+      ],
+      "height": "4' 11\"",
+      "category": "kicking",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 6,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 5,
+        "speed": 5
+      },
+      "evolutions": [
+        "tyrogue",
+        "hitmonlee",
+        "hitmonchan",
+        "hitmontop"
+      ]
+    },
+    "hitmonchan": {
+      "number": "107",
+      "type": [
+        "fighting"
+      ],
+      "height": "4' 07\"",
+      "category": "punching",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 5,
+        "speed": 4
+      },
+      "evolutions": [
+        "tyrogue",
+        "hitmonlee",
+        "hitmonchan",
+        "hitmontop"
+      ]
+    },
+    "lickitung": {
+      "number": "108",
+      "type": [
+        "normal"
+      ],
+      "height": "3' 11\"",
+      "category": "licking",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 2
+      },
+      "evolutions": [
+        "lickitung",
+        "lickilicky"
+      ]
+    },
+    "koffing": {
+      "number": "109",
+      "type": [
+        "poison"
+      ],
+      "height": "2' 00\"",
+      "category": "poison gas",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "koffing",
+        "weezing"
+      ]
+    },
+    "weezing": {
+      "number": "110",
+      "type": [
+        "poison"
+      ],
+      "height": "3' 11\"",
+      "category": "poison gas",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 5,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "koffing",
+        "weezing"
+      ]
+    },
+    "rhyhorn": {
+      "number": "111",
+      "type": [
+        "ground",
+        "rock"
+      ],
+      "height": "3' 03\"",
+      "category": "spikes",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 1,
+        "spDefense": 1,
+        "speed": 2
+      },
+      "evolutions": [
+        "rhyhorn",
+        "rhydon",
+        "rhyperior"
+      ]
+    },
+    "rhydon": {
+      "number": "112",
+      "type": [
+        "ground",
+        "rock"
+      ],
+      "height": "6' 03\"",
+      "category": "drill",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 7,
+        "defense": 5,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "rhyhorn",
+        "rhydon",
+        "rhyperior"
+      ]
+    },
+    "chansey": {
+      "number": "113",
+      "type": [
+        "normal"
+      ],
+      "height": "3' 07\"",
+      "category": "egg",
+      "abilities": [],
+      "stats": {
+        "hp": 9,
+        "attack": 1,
+        "defense": 1,
+        "spAttack": 2,
+        "spDefense": 4,
+        "speed": 3
+      },
+      "evolutions": [
+        "happiny",
+        "chansey",
+        "blissey"
+      ]
+    },
+    "tangela": {
+      "number": "114",
+      "type": [
+        "grass"
+      ],
+      "height": "3' 03\"",
+      "category": "vine",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 5,
+        "spAttack": 5,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "tangela",
+        "tangrowth"
+      ]
+    },
+    "kangaskhan": {
+      "number": "115",
+      "type": [
+        "normal",
+        "normal"
+      ],
+      "height": "7' 03\"",
+      "category": "parent",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "kangaskhan"
+      ]
+    },
+    "horsea": {
+      "number": "116",
+      "type": [
+        "water"
+      ],
+      "height": "1' 04\"",
+      "category": "dragon",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 1,
+        "speed": 3
+      },
+      "evolutions": [
+        "horsea",
+        "seadra",
+        "kingdra"
+      ]
+    },
+    "seadra": {
+      "number": "117",
+      "type": [
+        "water"
+      ],
+      "height": "3' 11\"",
+      "category": "dragon",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 4,
+        "spAttack": 5,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "horsea",
+        "seadra",
+        "kingdra"
+      ]
+    },
+    "goldeen": {
+      "number": "118",
+      "type": [
+        "water"
+      ],
+      "height": "2' 00\"",
+      "category": "goldfish",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "goldeen",
+        "seaking"
+      ]
+    },
+    "seaking": {
+      "number": "119",
+      "type": [
+        "water"
+      ],
+      "height": "4' 03\"",
+      "category": "goldfish",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "goldeen",
+        "seaking"
+      ]
+    },
+    "staryu": {
+      "number": "120",
+      "type": [
+        "water"
+      ],
+      "height": "2' 07\"",
+      "category": "star shape",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 5
+      },
+      "evolutions": [
+        "staryu",
+        "starmie"
+      ]
+    },
+    "starmie": {
+      "number": "121",
+      "type": [
+        "water",
+        "psychic"
+      ],
+      "height": "3' 07\"",
+      "category": "mysterious",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 6
+      },
+      "evolutions": [
+        "staryu",
+        "starmie"
+      ]
+    },
+    "mr-mime": {
+      "number": "122",
+      "type": [
+        "psychic",
+        "fairy"
+      ],
+      "height": "4' 03\"",
+      "category": "barrier",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 5,
+        "speed": 5
+      },
+      "evolutions": [
+        "mime jr.",
+        "mr. mime"
+      ]
+    },
+    "scyther": {
+      "number": "123",
+      "type": [
+        "bug",
+        "flying"
+      ],
+      "height": "4' 11\"",
+      "category": "mantis",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 6,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 6
+      },
+      "evolutions": [
+        "scyther",
+        "scizor"
+      ]
+    },
+    "jynx": {
+      "number": "124",
+      "type": [
+        "ice",
+        "psychic"
+      ],
+      "height": "4' 07\"",
+      "category": "human shape",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 6,
+        "spDefense": 4,
+        "speed": 5
+      },
+      "evolutions": [
+        "smoochum",
+        "jynx"
+      ]
+    },
+    "electabuzz": {
+      "number": "125",
+      "type": [
+        "electric"
+      ],
+      "height": "3' 07\"",
+      "category": "electric",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 6
+      },
+      "evolutions": [
+        "elekid",
+        "electabuzz",
+        "electivire"
+      ]
+    },
+    "magmar": {
+      "number": "126",
+      "type": [
+        "fire"
+      ],
+      "height": "4' 03\"",
+      "category": "spitfire",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 5
+      },
+      "evolutions": [
+        "magby",
+        "magmar",
+        "magmortar"
+      ]
+    },
+    "pinsir": {
+      "number": "127",
+      "type": [
+        "bug",
+        "bug",
+        "flying"
+      ],
+      "height": "4' 11\"",
+      "category": "stag beetle",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 6,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 5
+      },
+      "evolutions": [
+        "pinsir"
+      ]
+    },
+    "tauros": {
+      "number": "128",
+      "type": [
+        "normal"
+      ],
+      "height": "4' 07\"",
+      "category": "wild bull",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 6
+      },
+      "evolutions": [
+        "tauros"
+      ]
+    },
+    "magikarp": {
+      "number": "129",
+      "type": [
+        "water"
+      ],
+      "height": "2' 11\"",
+      "category": "fish",
+      "abilities": [],
+      "stats": {
+        "hp": 1,
+        "attack": 1,
+        "defense": 3,
+        "spAttack": 1,
+        "spDefense": 1,
+        "speed": 4
+      },
+      "evolutions": [
+        "magikarp",
+        "gyarados"
+      ]
+    },
+    "gyarados": {
+      "number": "130",
+      "type": [
+        "water",
+        "flying",
+        "water",
+        "dark"
+      ],
+      "height": "21' 04\"",
+      "category": "atrocious",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 6,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 4,
+        "speed": 4
+      },
+      "evolutions": [
+        "magikarp",
+        "gyarados"
+      ]
+    },
+    "lapras": {
+      "number": "131",
+      "type": [
+        "water",
+        "ice"
+      ],
+      "height": "8' 02\"",
+      "category": "transport",
+      "abilities": [],
+      "stats": {
+        "hp": 5,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 4,
+        "spDefense": 4,
+        "speed": 3
+      },
+      "evolutions": [
+        "lapras"
+      ]
+    },
+    "ditto": {
+      "number": "132",
+      "type": [
+        "normal"
+      ],
+      "height": "1' 00\"",
+      "category": "transform",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "ditto"
+      ]
+    },
+    "eevee": {
+      "number": "133",
+      "type": [
+        "normal"
+      ],
+      "height": "1' 00\"",
+      "category": "evolution",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "eevee",
+        "vaporeon",
+        "jolteon",
+        "flareon",
+        "umbreon",
+        "glaceon",
+        "leafeon",
+        "espeon",
+        "sylveon"
+      ]
+    },
+    "vaporeon": {
+      "number": "134",
+      "type": [
+        "water"
+      ],
+      "height": "3' 03\"",
+      "category": "bubble jet",
+      "abilities": [],
+      "stats": {
+        "hp": 5,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 4
+      },
+      "evolutions": [
+        "eevee",
+        "vaporeon",
+        "jolteon",
+        "flareon",
+        "umbreon",
+        "glaceon",
+        "leafeon",
+        "espeon",
+        "sylveon"
+      ]
+    },
+    "jolteon": {
+      "number": "135",
+      "type": [
+        "electric"
+      ],
+      "height": "2' 07\"",
+      "category": "lightning",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 7
+      },
+      "evolutions": [
+        "eevee",
+        "vaporeon",
+        "jolteon",
+        "flareon",
+        "umbreon",
+        "glaceon",
+        "leafeon",
+        "espeon",
+        "sylveon"
+      ]
+    },
+    "flareon": {
+      "number": "136",
+      "type": [
+        "fire"
+      ],
+      "height": "2' 11\"",
+      "category": "flame",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 7,
+        "defense": 3,
+        "spAttack": 5,
+        "spDefense": 5,
+        "speed": 4
+      },
+      "evolutions": [
+        "eevee",
+        "vaporeon",
+        "jolteon",
+        "flareon",
+        "umbreon",
+        "glaceon",
+        "leafeon",
+        "espeon",
+        "sylveon"
+      ]
+    },
+    "porygon": {
+      "number": "137",
+      "type": [
+        "normal"
+      ],
+      "height": "2' 07\"",
+      "category": "virtual",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 3,
+        "spAttack": 4,
+        "spDefense": 3,
+        "speed": 2
+      },
+      "evolutions": [
+        "porygon",
+        "porygon2",
+        "porygon-z"
+      ]
+    },
+    "omanyte": {
+      "number": "138",
+      "type": [
+        "rock",
+        "water"
+      ],
+      "height": "1' 04\"",
+      "category": "spiral",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 4,
+        "spAttack": 4,
+        "spDefense": 2,
+        "speed": 2
+      },
+      "evolutions": [
+        "omanyte",
+        "omastar"
+      ]
+    },
+    "omastar": {
+      "number": "139",
+      "type": [
+        "rock",
+        "water"
+      ],
+      "height": "3' 03\"",
+      "category": "spiral",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 3,
+        "defense": 5,
+        "spAttack": 6,
+        "spDefense": 3,
+        "speed": 3
+      },
+      "evolutions": [
+        "omanyte",
+        "omastar"
+      ]
+    },
+    "kabuto": {
+      "number": "140",
+      "type": [
+        "rock",
+        "water"
+      ],
+      "height": "1' 08\"",
+      "category": "shellfish",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 3,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "kabuto",
+        "kabutops"
+      ]
+    },
+    "kabutops": {
+      "number": "141",
+      "type": [
+        "rock",
+        "water"
+      ],
+      "height": "4' 03\"",
+      "category": "shellfish",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 6,
+        "defense": 5,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "kabuto",
+        "kabutops"
+      ]
+    },
+    "aerodactyl": {
+      "number": "142",
+      "type": [
+        "rock",
+        "flying",
+        "rock",
+        "flying"
+      ],
+      "height": "5' 11\"",
+      "category": "fossil",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 5,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 7
+      },
+      "evolutions": [
+        "aerodactyl"
+      ]
+    },
+    "snorlax": {
+      "number": "143",
+      "type": [
+        "normal"
+      ],
+      "height": "6' 11\"",
+      "category": "sleeping",
+      "abilities": [],
+      "stats": {
+        "hp": 6,
+        "attack": 6,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 5,
+        "speed": 2
+      },
+      "evolutions": [
+        "munchlax",
+        "snorlax"
+      ]
+    },
+    "articuno": {
+      "number": "144",
+      "type": [
+        "ice",
+        "flying"
+      ],
+      "height": "5' 07\"",
+      "category": "freeze",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 4,
+        "defense": 4,
+        "spAttack": 5,
+        "spDefense": 5,
+        "speed": 5
+      },
+      "evolutions": [
+        "articuno"
+      ]
+    },
+    "zapdos": {
+      "number": "145",
+      "type": [
+        "electric",
+        "flying"
+      ],
+      "height": "5' 03\"",
+      "category": "electric",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 6,
+        "spDefense": 4,
+        "speed": 5
+      },
+      "evolutions": [
+        "zapdos"
+      ]
+    },
+    "moltres": {
+      "number": "146",
+      "type": [
+        "fire",
+        "flying"
+      ],
+      "height": "6' 07\"",
+      "category": "flame",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 6,
+        "spDefense": 4,
+        "speed": 5
+      },
+      "evolutions": [
+        "moltres"
+      ]
+    },
+    "dratini": {
+      "number": "147",
+      "type": [
+        "dragon"
+      ],
+      "height": "5' 11\"",
+      "category": "dragon",
+      "abilities": [],
+      "stats": {
+        "hp": 2,
+        "attack": 3,
+        "defense": 2,
+        "spAttack": 2,
+        "spDefense": 2,
+        "speed": 3
+      },
+      "evolutions": [
+        "dratini",
+        "dragonair",
+        "dragonite"
+      ]
+    },
+    "dragonair": {
+      "number": "148",
+      "type": [
+        "dragon"
+      ],
+      "height": "13' 01\"",
+      "category": "dragon",
+      "abilities": [],
+      "stats": {
+        "hp": 3,
+        "attack": 4,
+        "defense": 3,
+        "spAttack": 3,
+        "spDefense": 3,
+        "speed": 4
+      },
+      "evolutions": [
+        "dratini",
+        "dragonair",
+        "dragonite"
+      ]
+    },
+    "dragonite": {
+      "number": "149",
+      "type": [
+        "dragon",
+        "flying"
+      ],
+      "height": "7' 03\"",
+      "category": "dragon",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 7,
+        "defense": 4,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 4
+      },
+      "evolutions": [
+        "dratini",
+        "dragonair",
+        "dragonite"
+      ]
+    },
+    "mewtwo": {
+      "number": "150",
+      "type": [
+        "psychic",
+        "psychic",
+        "fighting",
+        "psychic"
+      ],
+      "height": "6' 07\"",
+      "category": "genetic",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 6,
+        "defense": 4,
+        "spAttack": 8,
+        "spDefense": 4,
+        "speed": 7
+      },
+      "evolutions": [
+        "mewtwo"
+      ]
+    },
+    "mew": {
+      "number": "151",
+      "type": [
+        "psychic"
+      ],
+      "height": "1' 04\"",
+      "category": "new species",
+      "abilities": [],
+      "stats": {
+        "hp": 4,
+        "attack": 5,
+        "defense": 4,
+        "spAttack": 5,
+        "spDefense": 4,
+        "speed": 5
+      },
+      "evolutions": [
+        "mew"
+      ]
     }
-}
+  }
