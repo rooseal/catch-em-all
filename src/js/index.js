@@ -17,6 +17,8 @@ export class CatchEmAll extends React.Component {
         }
 
         this.pokeData = pokemonService.getPokemonData();
+
+        this.handleRandom = this.handleRandom.bind(this);
     }
 
     componentDidMount() {
@@ -25,12 +27,29 @@ export class CatchEmAll extends React.Component {
         });
     }
 
+    handleRandom() {
+        let pokemon, r = Math.floor(Math.random() * 151), { team } = this.state;
+
+        Object.keys(this.pokeData).forEach((poke, i) => {
+            if(i === r) {
+                pokemon = Object.assign({}, this.pokeData[poke], {name: poke, level: 3});
+            }
+        });
+        
+
+        team.push(pokemon);
+
+        this.setState({
+            team
+        });
+    }
+
     renderPokemon(pokemon) {
         let basePokemon = this.pokeData[pokemon.name];
 
         console.log(basePokemon);
 
-        return <p key={pokemon.name + pokemon.id} className={'pokemon-list-entry ' + basePokemon.type[0]}>{pokemon.name}<span>{pokemon.level}</span></p>
+        return <p key={pokemon.name + pokemon.id} className={'pokemon-list-entry ' + basePokemon.type[0]}><img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${basePokemon.number}.png`} />{pokemon.name}<span>{pokemon.level}</span></p>
     }
 
     render() {
@@ -43,7 +62,7 @@ export class CatchEmAll extends React.Component {
                         this.state.team.map(pokemon => this.renderPokemon(pokemon))
                     }
                 </div>
-                <button>get random pokemon</button>
+                <button onClick={this.handleRandom}>get random pokemon</button>
                 <button>release a pokemon</button>
                 <button>go to battle map</button>
             </div>
