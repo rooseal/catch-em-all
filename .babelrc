@@ -1,5 +1,9 @@
 {
     "presets": [
-        "react-app"
+        ["env", {
+            "modules": false
+        }],
+        "react",
+        "stage-3"
     ]
 }
