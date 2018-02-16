@@ -1,11 +1,11 @@
 const path = require('path')
 
 module.exports = exports = env => ({
-  entry: './src/js/index.js',
+  entry: './src/js/app.jsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/public/'
+    publicPath: 'public/'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.scss']
@@ -46,5 +46,8 @@ module.exports = exports = env => ({
         loader: 'json-loader'
       }
     ]
+  },
+  devServer: {
+    contentBase: 'public/'
   }
 })
