@@ -1,3 +1,12 @@
 {
-    "extends": "standard"
+    "extends": "standard",
+    "rules": {
+        "no-unused-vars": "off",
+        "babel/semi": 0
+    },
+    "plugins": [
+        "babel",
+        "class-property"
+    ],
+    "parser": "babel-eslint"
 }
