@@ -1,80 +1,85 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import * as pokemonService from './pokemon-service';
+import * as pokemonService from './pokemon-service'
 
-import '../scss/main.scss';
+import '../scss/main.scss'
 
 export class CatchEmAll extends React.Component {
+  constructor (props) {
+    super(props)
 
-    pokeData;
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            team: []
-        }
-
-        this.pokeData = pokemonService.getPokemonData();
-
-        this.handleRandom = this.handleRandom.bind(this);
+    this.state = {
+      team: []
     }
 
-    componentDidMount() {
-        this.setState({
-            team: pokemonService.getPokemonTeam()
-        });
-    }
+    this.pokeData = pokemonService.getPokemonData()
 
-    handleRandom() {
-        let pokemon, r = Math.floor(Math.random() * 151), { team } = this.state;
+    this.handleRandom = this.handleRandom.bind(this)
+  }
 
-        Object.keys(this.pokeData).forEach((poke, i) => {
-            if(i === r) {
-                pokemon = Object.assign({}, this.pokeData[poke], {name: poke, level: 3});
-            }
-        });
-        
+  componentDidMount () {
+    this.setState({
+      team: pokemonService.getPokemonTeam()
+    })
+  }
 
-        team.push(pokemon);
+  handleRandom () {
+    let pokemon
+    let r = Math.floor(Math.random() * 151)
+    let { team } = this.state
 
-        this.setState({
-            team
-        });
-    }
+    Object.keys(this.pokeData).forEach((poke, i) => {
+      if (i === r) {
+        pokemon = Object.assign({}, this.pokeData[poke], {name: poke, level: 3})
+      }
+    })
 
-    renderPokemon(pokemon) {
-        let basePokemon = this.pokeData[pokemon.name];
+    team.push(pokemon)
 
-        console.log(basePokemon);
+    this.setState({
+      team
+    })
+  }
 
-        return <p key={pokemon.name + pokemon.id} className={'pokemon-list-entry ' + basePokemon.type[0]}><img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${basePokemon.number}.png`} />{pokemon.name}<span>{pokemon.level}</span></p>
-    }
+  renderPokemon (pokemon) {
+    let basePokemon = this.pokeData[pokemon.name]
 
-    render() {
-        return (
-            <div className='app-container'>
-                <h1>Collect all pokemons</h1>
-                <h2>List of your pokemons</h2>
-                <div className='pokemon-container'>
-                    { 
-                        this.state.team.map(pokemon => this.renderPokemon(pokemon))
-                    }
-                </div>
-                <button onClick={this.handleRandom}>get random pokemon</button>
-                <button>release a pokemon</button>
-                <button>go to battle map</button>
-            </div>
-        )
-    }
+    console.log(basePokemon)
+
+    return (
+      <p key={pokemon.name + pokemon.id} className={'pokemon-list-entry ' + basePokemon.type[0]}>
+        <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${basePokemon.number}.png`} />
+        {pokemon.name}
+        <span>{pokemon.level}</span>
+      </p>
+    )
+  }
+
+  render () {
+    return (
+      <div className='app-container'>
+        <h1>Collect all pokemons</h1>
+        <h2>List of your pokemons</h2>
+        <div className='pokemon-container'>
+          {
+            this.state.team.map(pokemon => this.renderPokemon(pokemon))
+          }
+        </div>
+        <button onClick={this.handleRandom}>get random pokemon</button>
+        <button>release a pokemon</button>
+        <button>go to battle map</button>
+      </div>
+    )
+  }
 }
 
 ReactDOM.render(
-    <CatchEmAll />,
-    document.getElementById('reactApp')
-);
+  <CatchEmAll />,
+  document.getElementById('reactApp')
+)
 
-if(module.hot) {
-    module.hot.accept();
+// Enable hot module reloading for react
+if (module.hot) {
+  module.hot.accept()
 }
