@@ -1,9 +1,9 @@
 {
-    "presets": [
-        ["env", {
-            "modules": false
-        }],
-        "react",
-        "stage-3"
-    ]
+  "presets" : [
+    "react", 
+    ["env", {
+      "modules": false
+    }],
+    "stage-2"
+  ]
 }
