@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getNumber } from './services/pokemon-service'
+import { getNumber } from '../services/pokemon-service'
 
 export default props => {
   const { pokemon: { name, category, level, text, type, evolutions } } = props
