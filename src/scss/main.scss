@@ -1,5 +1,10 @@
+* {
+    // outline: 1px dashed red;
+}
+
 body {
     font-size: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1 {
@@ -26,11 +31,15 @@ button {
     border-bottom: 4px solid green;
 }
 
+.container {
+    margin-bottom: 20px;
+}
+
 .app-container {
     width: 600px;
     margin: 10px auto;
+    overflow-x: hidden;
 }
-
 
 .pokemon-container {
     width: 600px;
@@ -71,15 +80,129 @@ button {
     }
 }
 
+.flex-parent {
+    display: flex;
+}
+
+.flex-grid {
+    display: flex;
+}
+
+.flex-grid > div {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.arrow-right {
+    font-size: 3em;
+    padding: 0 0.5em;
+    line-height: 50px;
+    color: darkgray;
+}
+
+.arrow-right:last-child {
+    display: none;
+}   
+
 .release-mode .pokemon-list-entry:hover {
     box-shadow: 0 0 20px firebrick;
     opacity: 0.4;
 }
 
+.stat-bar {
+    height: 14px;
+    position: relative;
+    background-color: orangered;
+    top: 50%;
+    margin-top: -7px;
+}
+
+h3 {
+    margin: 0;
+    color: royalblue;
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0.3em 1em 0.3em 0;
+}
+
 .pokemon-details {
-    img {
-        width: 200px
+    margin-bottom: 20px;
+
+    .summary {
+        padding-left: 1em;
     }
+
+    .pokemon-level {
+        float: right;
+        font-size: 4em;
+        color: royalblue;
+        font-weight: bold;
+    }
+
+    .type {
+        border-radius: 3px;
+        padding: 0.3em 1em;
+        font-size: 1.5em;
+        width: 5em;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        margin-right: 6px;
+        margin-bottom: 4px;
+    }
+
+    .ability {
+        padding: 0.3em 1em;
+        font-size: 1.5em;
+        width: 5em;
+        font-weight: bold;
+        color: black;
+        margin-right: 6px;
+        margin-bottom: 4px;
+    }
+
+    .stat {
+        padding: 0.1em 1em;
+        font-size: 1.5em;
+        width: 5em;
+        font-weight: bold;
+        color: black;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+
+    h2 {
+        text-align: left;
+        margin: 0;
+        transform: scale(1.3, 1);
+        transform-origin: 0;
+        + p {
+            margin-top: -5px;
+            margin-bottom: 0;
+            color: royalblue;
+            display: inline-block;
+            font-size: 1.5em;
+            font-weight: bold;
+            transform: scale(1.5, 1);
+            transform-origin: 0;
+        }
+    }
+
+    img {
+        height: 200px;
+
+        &.evolution {
+            height: 50px;
+        }
+    }
+}
+
+.evolutions {
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* Type Colors */
