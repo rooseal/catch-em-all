@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import * as pokemonService from './services/pokemon-service'
 import Controls from './controls'
 import PokeList from './poke-list'
-import PokeDetails from './poke-details'
+import PokeDetails from './details/poke-details'
 
 import '../scss/main.scss'
 
@@ -12,15 +12,16 @@ export class CatchEmAll extends React.Component {
   state = {
     team: [],
     releaseMode: false,
-    view: 'team',
+    view: 'details',
     selectedPokemon: undefined
   }
 
   componentDidMount () {
     pokemonService.getPokemonTeam()
       .then(team => this.setState({
-        team
-      }, () => console.log(this.state.team)))
+        team,
+        selectedPokemon: team[0]
+      }))
   }
 
   render () {
