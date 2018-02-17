@@ -5,7 +5,7 @@ module.exports = exports = env => ({
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'public/'
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.scss']
@@ -48,6 +48,7 @@ module.exports = exports = env => ({
     ]
   },
   devServer: {
-    contentBase: 'public/'
+    contentBase: 'public/',
+    historyApiFallback: true
   }
 })
