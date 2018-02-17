@@ -1,9 +1,13 @@
 import React from 'react'
 
-export default props => (
-  <p className={'pokemon-list-entry ' + props.type[0]} onClick={e => typeof props.onAction === 'function' && props.onAction(props.id)}>
-    <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${props.number}.png`} />
-    {props.name}
-    <span>{props.level}</span>
-  </p>
-)
+export default props => {
+  const { pokemon: { id, type, number, name, level } } = props
+
+  return (
+    <div>
+      <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${number}.png`} />
+      {name}
+      <span>{level}</span>
+    </div>
+  )
+}

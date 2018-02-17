@@ -1,6 +1,10 @@
 import pokemonData from '../../../data/pokemon/pokemon-new.json'
 import uuid from 'uuid/v1'
 
+const lsKeys = {
+  pokemonTeam: 'cea-pokemon-team'
+}
+
 /**
  *Image sources
  *-------------------
@@ -40,15 +44,25 @@ export function getPokemonData () {
 export function getPokemonTeam () {
   return new Promise((resolve, reject) => {
     const pokemons = getPokemonData()
+    let initialTeam
 
-    let initialTeam = [
+    if (window.localStorage) {
+      let serializedTeam = window.localStorage.getItem(lsKeys.pokemonTeam)
+
+      if (serializedTeam !== null) {
+        return resolve(JSON.parse(serializedTeam))
+      }
+    }
+
+    initialTeam = [
       'charmander',
       'pikachu',
       'pidgey',
       'mankey'
-    ]
+    ].map(pokemon => newPokemon(pokemon))
 
-    resolve(initialTeam.map(pokemon => newPokemon(pokemon)))
+    saveTeam(initialTeam)
+    resolve(initialTeam)
   })
 }
 
@@ -56,7 +70,7 @@ export function getRandom () {
   return new Promise((resolve, reject) => {
     const pokemons = getPokemonData()
 
-    let r = Math.floor(Math.random() * 151)
+    let r = Math.floor(Math.random() * Object.keys(pokemons).length)
     let pokemon = Object.keys(pokemons)[r]
 
     resolve(newPokemon(pokemon))
@@ -65,4 +79,10 @@ export function getRandom () {
 
 export function getNumber (name) {
   return pokemonData[name].number
+}
+
+export function saveTeam (team) {
+  if (window.localStorage === undefined) return console.log(`Warning - Can't save your data, please upgrade to a browser with local storage`)
+
+  window.localStorage.setItem(lsKeys.pokemonTeam, JSON.stringify(team))
 }

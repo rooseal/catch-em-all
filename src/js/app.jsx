@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
 
 import * as pokemonService from './services/pokemon-service'
+
 import Controls from './controls'
 import PokeList from './poke-list'
 import PokeDetails from './details/poke-details'
@@ -28,26 +30,20 @@ export class CatchEmAll extends React.Component {
     const { view, team, releaseMode, selectedPokemon } = this.state
 
     return (
-      <div className={`app-container ${releaseMode ? 'release-mode' : ''}`}>
-        <h1>Collect all pokemons</h1>
-        {
-          view === 'details' && selectedPokemon !== undefined
-            ? <PokeDetails pokemon={selectedPokemon} />
-            : <PokeList team={team} onRelease={this.handleRelease} onDetails={this.handleViewPokemon} releaseMode={releaseMode} />
-        }
-        <Controls
-          onRandom={this.handleRandom}
-          onRelease={this.handleActivateRelease}
-        />
-      </div>
-    )
-  }
+      <Router>
+        <div className={`app-container ${releaseMode ? 'release-mode' : ''}`}>
+          <h1>Collect all pokemons</h1>
 
-  handleViewPokemon = pokemonID => {
-    this.setState(state => ({
-      selectedPokemon: state.team.find(pokemon => pokemon.id === pokemonID),
-      view: 'details'
-    }))
+          <Route exact path="/" render={props => <PokeList {...props} team={team} onRelease={this.handleRelease} onDetails={this.handleViewPokemon} releaseMode={releaseMode} />} />
+          <Route path="/pokemon/:id" render={props => <PokeDetails {...props} team={team} />} />
+
+          <Controls
+            onRandom={this.handleRandom}
+            onRelease={this.handleActivateRelease}
+          />
+        </div>
+      </Router>
+    )
   }
 
   handleRandom = () => {
@@ -61,12 +57,14 @@ export class CatchEmAll extends React.Component {
       }))
   }
 
-  handleRelease = (pokemonID) => {
+  handleRelease = (pokemonID, e) => {
     this.setState(state => {
       return {
         team: state.team.filter(pokemon => pokemon.id !== pokemonID)
       }
-    })
+    }, pokemonService.saveTeam(this.state.team))
+
+    e.preventDefault()
   }
 
   handleActivateRelease = () => {
