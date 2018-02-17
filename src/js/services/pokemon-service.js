@@ -1,4 +1,4 @@
-import pokemonData from '../../../data/pokemon/pokemon.json'
+import pokemonData from '../../../data/pokemon/pokemon-new.json'
 import uuid from 'uuid/v1'
 
 /**
@@ -16,9 +16,21 @@ function newPokemon (pokemonName) {
     {
       name: pokemonName,
       level: 3,
-      id: uuid()
+      id: uuid(),
+      abilities: randomAbilities(pokemonData[pokemonName].abilities, 4)
     }
   )
+}
+
+function randomAbilities (abilities, amount = 1) {
+  let chosen = []
+  abilities = Array.from(abilities)
+
+  for (let i = 0; i < amount; i++) {
+    chosen.push(abilities.splice(Math.floor(Math.random() * abilities.length), 1).pop())
+  }
+
+  return chosen
 }
 
 export function getPokemonData () {
@@ -49,4 +61,8 @@ export function getRandom () {
 
     resolve(newPokemon(pokemon))
   })
+}
+
+export function getNumber (name) {
+  return pokemonData[name].number
 }
