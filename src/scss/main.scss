@@ -196,7 +196,7 @@ a {
     display: none;
 }   
 
-.release-mode .pokemon-list-entry:hover {
+.pokemon-list-entry.release-mode:hover {
     box-shadow: 0 0 20px firebrick;
     opacity: 0.4;
 }
