@@ -15,24 +15,49 @@ const lsKeys = {
  */
 
 function newPokemon (pokemonName) {
+  let pokemon = pokemonData[pokemonName]
+  let maxLevelAbilities
+
+  pokemon.evolutions.forEach((evolution, i, a) => {
+    if (evolution.name === pokemonName) {
+      if (a.length >= i + 1) {
+        maxLevelAbilities = -1
+      } else {
+        maxLevelAbilities = a[i + 1].level
+      }
+    }
+  })
+
   return Object.assign(
     {},
-    pokemonData[pokemonName],
+    pokemon,
     {
       name: pokemonName,
       level: 3,
       id: uuid(),
-      abilities: randomAbilities(pokemonData[pokemonName].abilities, 4)
+      abilities: randomAbilities(pokemon.abilities, 4, maxLevelAbilities)
     }
   )
 }
 
-function randomAbilities (abilities, amount = 1) {
+function randomAbilities (abilities, amount, max) {
   let chosen = []
-  abilities = Array.from(abilities)
+  let random
+  let tmp
 
-  for (let i = 0; i < amount; i++) {
-    chosen.push(abilities.splice(Math.floor(Math.random() * abilities.length), 1).pop())
+  if (max !== -1) {
+    for (let i = 0; i < amount; i++) {
+      do {
+        random = Math.floor(Math.random() * abilities.length)
+        tmp = abilities.slice(random, 1).pop()
+      } while (tmp.level >= max)
+
+      chosen.push(abilities.splice(random, 1).pop())
+    }
+  } else {
+    for (let i = 0; i < amount; i++) {
+      chosen.push(abilities.splice(Math.floor(Math.random() * abilities.length), 1).pop())
+    }
   }
 
   return chosen
@@ -70,9 +95,13 @@ export function getPokemonTeam () {
 export function getRandom () {
   return new Promise((resolve, reject) => {
     const pokemons = getPokemonData()
+    let pokemon
 
-    let r = Math.floor(Math.random() * Object.keys(pokemons).length)
-    let pokemon = Object.keys(pokemons)[r]
+    do {
+      let r = Math.floor(Math.random() * Object.keys(pokemons).length)
+      pokemon = Object.keys(pokemons)[r]
+      console.log(`Trying for pokemon: ${pokemon}`)
+    } while (pokemons[pokemon].evolutions[0].name !== pokemon)
 
     resolve(newPokemon(pokemon))
   })

@@ -20,8 +20,8 @@ export default props => {
       <div className="flex-parent evolutions" style={{marginLeft: '10px'}}>
         {
           evolutions.map(evolution => (
-            <React.Fragment key={evolution}>
-              <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${getNumber(evolution)}.png`} className={`evolution ${name === evolution ? 'active' : ''}`} />
+            <React.Fragment key={evolution.name}>
+              <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${getNumber(evolution.name)}.png`} className={`evolution ${name === evolution.name ? 'active' : ''}`} />
               <div className="arrow-right">&rArr;</div>
             </React.Fragment>
           ))
