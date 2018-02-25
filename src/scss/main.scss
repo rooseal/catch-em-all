@@ -128,6 +128,17 @@ a {
     *zoom: 1;
 }
 
+.big-button {
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.text {
+    font-size: 1.3em;
+    margin: 20px;
+}
+
 .modal-wrapper {
     position: fixed;
     background: rgba(0, 0, 0, 0.8);
@@ -181,6 +192,40 @@ a {
         
         .new-pokemon-image {
             width: 150px;
+            margin: 0 20px;
+        }
+    }
+}
+
+.battle-poke-list {    
+    .battle-pokemon {
+        width: 140px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        margin: 5px;
+        position: relative;
+        text-shadow: 0 0 2px black;
+        
+        h2 {
+            font-size: 1.3em;
+            color: black;
+            text-shadow: 0, 0, 4px white;
+            text-align: left;
+            margin-left: 10px;
+        }
+    
+        .level {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 2em;
+            color: royalblue;
+            text-shadow: 0, 0, 2px black;
+            font-weight: bold;
+        }
+
+        .battle-pokemon-image {
+            width: 110px;
             margin: 0 20px;
         }
     }
