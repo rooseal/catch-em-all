@@ -1,5 +1,6 @@
 * {
     // outline: 1px dashed red;
+    user-select: none;
 }
 
 body {
@@ -106,6 +107,82 @@ a {
 .flex-grid > div {
     flex-basis: 0;
     flex-grow: 1;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+.modal-wrapper {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    
+    .modal-container {
+        display: inline-block;
+        position: fixed;
+        margin: 100px auto;
+        right: 0;
+        left: 0;
+        
+        .modal-inner-wrapper {
+            display: flex;
+            justify-content: space-around;
+            
+            .modal-content {
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
+.close-button {
+    float: right;
+    font-weight: bold;
+    font-size: 14px;
+    left: 50px;
+    top: 10px;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px black;
+    cursor: pointer;
+}
+
+.new-poke-list {
+    margin: 0 50px;
+
+    .new-pokemon {
+        width: 190px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        margin: 10px;
+        text-shadow: 0 0 2px black;
+        
+        .new-pokemon-image {
+            width: 150px;
+            margin: 0 20px;
+        }
+    }
 }
 
 .arrow-right {
