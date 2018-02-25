@@ -8,6 +8,7 @@ import Controls from './controls'
 import PokeList from './team/poke-list'
 import PokeDetails from './details/poke-details'
 import Modal from './modal/modal'
+import Pokedex from './pokedex/pokedex'
 
 import '../../scss/main.scss'
 
@@ -36,6 +37,7 @@ export class CatchEmAll extends React.Component {
 
           <Route exact path="/" render={props => <PokeList {...props} team={team} onRelease={this.handleRelease} onRandom={this.handleRandom} />} />
           <Route path="/pokemon/:id" render={props => <PokeDetails {...props} team={team} />} />
+          <Route path="/pokedex" component={Pokedex} />
 
           { newPokemons !== undefined &&
 
