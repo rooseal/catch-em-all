@@ -102,6 +102,7 @@ a {
 
 .flex-grid {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .flex-grid > div {
@@ -175,7 +176,7 @@ a {
         width: 190px;
         border-radius: 5px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-        margin: 10px;
+        margin: 5px;
         text-shadow: 0 0 2px black;
         
         .new-pokemon-image {
@@ -183,6 +184,10 @@ a {
             margin: 0 20px;
         }
     }
+}
+
+.pokedex {
+    margin: 0;
 }
 
 .arrow-right {
@@ -207,6 +212,13 @@ a {
     background-color: orangered;
     top: 50%;
     margin-top: -7px;
+}
+
+.important {
+    color: firebrick;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.4em;
 }
 
 .pokemon-details {
