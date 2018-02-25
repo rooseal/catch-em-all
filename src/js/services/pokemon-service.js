@@ -14,9 +14,11 @@ const lsKeys = {
  *-------------------
  */
 
-function newPokemon (pokemonName) {
+function newPokemon (pokemonName, level = 3) {
   let pokemon = pokemonData[pokemonName]
   let maxLevelAbilities
+
+  console.log(pokemonName)
 
   pokemon.evolutions.forEach((evolution, i, a) => {
     if (evolution.name === pokemonName) {
@@ -33,7 +35,7 @@ function newPokemon (pokemonName) {
     pokemon,
     {
       name: pokemonName,
-      level: 3,
+      level: level,
       id: uuid(),
       abilities: randomAbilities(pokemon.abilities, 4, maxLevelAbilities)
     }
@@ -89,6 +91,14 @@ export function getPokemonTeam () {
 
     saveTeam(initialTeam)
     resolve(initialTeam)
+  })
+}
+
+export function getFullyRandom () {
+  return new Promise((resolve, reject) => {
+    const pokemons = getPokemonData()
+
+    resolve(newPokemon(Object.keys(pokemons)[Math.floor(Math.random() * Object.keys(pokemons).length)], Math.ceil(Math.random() * 10)))
   })
 }
 
