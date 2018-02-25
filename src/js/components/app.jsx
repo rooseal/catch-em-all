@@ -9,7 +9,7 @@ import PokeList from './team/poke-list'
 import PokeDetails from './details/poke-details'
 import Modal from './modal/modal'
 
-import '../scss/main.scss'
+import '../../scss/main.scss'
 
 export class CatchEmAll extends React.Component {
   state = {
