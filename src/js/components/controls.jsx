@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default props => (
-  <div>
+  <div style={{marginBottom: '50px'}}>
     <Link to="/"><button>Team</button></Link>
-    <button><Link to="/pokedex">Pokedex</Link></button>
-    <button><Link to="/battle">Battle</Link></button>
+    <Link to="/pokedex"><button>Pokedex</button></Link>
+    <Link to="/battle"><button>Battle</button></Link>
   </div>
 )
