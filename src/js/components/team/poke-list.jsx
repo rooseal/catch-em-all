@@ -32,7 +32,11 @@ class PokeList extends React.Component {
         <div className='pokemon-container'>
           {
             team.map(pokemon => (
-              <div key={pokemon.id} onClickCapture={mode === listModes.release ? onRelease.bind(this, pokemon.id) : undefined} className={'pokemon-list-entry ' + pokemon.type[0]}>
+              <div
+                key={pokemon.id}
+                onClickCapture={mode === listModes.release ? onRelease.bind(this, pokemon.id) : undefined}
+                className={`pokemon-list-entry ${pokemon.type[0]} ${mode === listModes.release ? 'release-mode' : ''}`}
+              >
                 <Link to={`/pokemon/${pokemon.id}`}>
                   <PokeItem pokemon={pokemon} />
                 </Link>
@@ -40,9 +44,14 @@ class PokeList extends React.Component {
             ))
           }
         </div>
+
         <div>
+          {
+            mode === listModes.release &&
+              <p className="important">Click pokemon to release into the wild</p>
+          }
           <button onClick={onRandom}>get random pokemon</button>
-          <button onClick={onRelease}>release a pokemon</button>
+          <button onClick={this.handleToggleRelease}>release a pokemon</button>
         </div>
       </div>
     )
