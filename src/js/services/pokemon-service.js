@@ -1,4 +1,5 @@
-import pokemonData from '../../../data/pokemon/pokemon-new.json'
+import pokemonData from '../../../data/pokemon/pokemon.json'
+import multipliers from '../../../data/pokemon/multipliers.json'
 import uuid from 'uuid/v1'
 
 const lsKeys = {
@@ -79,6 +80,20 @@ export function getRandom () {
 
 export function getNumber (name) {
   return pokemonData[name].number
+}
+
+export function getAttackMultiplier (attackType, defendingPokemon) {
+  let multiplier = 1
+  let types = getPokemonData()[defendingPokemon]
+
+  if (types === undefined) throw new Error('Defending pokemon could not be found in the pokedex')
+
+  types.forEach(type => {
+    let tmpMultiplier = multipliers[attackType].attack[type]
+    if (tmpMultiplier) {
+      multiplier *= tmpMultiplier
+    }
+  })
 }
 
 export function saveTeam (team) {
