@@ -4,6 +4,6 @@
     ["env", {
       "modules": false
     }],
-    "stage-2"
+    "stage-0"
   ]
 }

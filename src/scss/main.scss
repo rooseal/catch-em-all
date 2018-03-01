@@ -41,6 +41,14 @@ button {
     border-bottom: 4px solid green;
 }
 
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid darkgray;
+    margin-bottom: 10px;
+}
+
 a {
     color: inherit;
     text-decoration: inherit;
@@ -131,7 +139,7 @@ a {
 .big-button {
     width: 100%;
     padding: 20px;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .text {

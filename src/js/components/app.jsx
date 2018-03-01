@@ -6,6 +6,8 @@ import * as pokemonService from '../services/pokemon-service'
 
 import Modal from './modal/modal'
 import Controls from './controls'
+import PrivateRoute from './auth/privateRoute'
+import Login from './auth/login'
 
 import PokeList from './team/poke-list'
 import PokeDetails from './details/poke-details'
@@ -37,10 +39,11 @@ export class CatchEmAll extends React.Component {
 
           <Controls />
 
-          <Route exact path="/" render={props => <PokeList {...props} team={team} onRelease={this.handleRelease} onRandom={this.handleRandom} />} />
-          <Route path="/pokemon/:id" render={props => <PokeDetails {...props} team={team} />} />
+          <PrivateRoute exact path="/" render={props => <PokeList {...props} team={team} onRelease={this.handleRelease} onRandom={this.handleRandom} />} />
+          <PrivateRoute path="/pokemon/:id" render={props => <PokeDetails {...props} team={team} />} />
+          <PrivateRoute path="/battle" component={BattleHome} />
           <Route path="/pokedex" component={Pokedex} />
-          <Route path="/battle" component={BattleHome} />
+          <Route path="/login" component={Login} />
 
           { newPokemons !== undefined &&
 

@@ -23,7 +23,7 @@ function newPokemon (pokemonName, level = 3) {
   pokemon.evolutions.forEach((evolution, i, a) => {
     if (evolution.name === pokemonName) {
       if (a.length >= i + 1) {
-        maxLevelAbilities = -1
+        maxLevelAbilities = null
       } else {
         maxLevelAbilities = a[i + 1].level
       }
@@ -35,6 +35,7 @@ function newPokemon (pokemonName, level = 3) {
     pokemon,
     {
       name: pokemonName,
+      nickName: pokemonName,
       level: level,
       id: uuid(),
       abilities: randomAbilities(pokemon.abilities, 4, maxLevelAbilities)
@@ -42,12 +43,12 @@ function newPokemon (pokemonName, level = 3) {
   )
 }
 
-function randomAbilities (abilities, amount, max) {
+function randomAbilities (abilities, amount, max = null) {
   let chosen = []
   let random
   let tmp
 
-  if (max !== -1) {
+  if (max !== null) {
     for (let i = 0; i < amount; i++) {
       do {
         random = Math.floor(Math.random() * abilities.length)
