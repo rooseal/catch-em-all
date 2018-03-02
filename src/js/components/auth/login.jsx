@@ -10,8 +10,9 @@ class Login extends React.Component {
     loggedIn: authService.isAuth()
   }
 
-  handleLogin = e => {
-    let loggedIn = authService.login(this.state.username, this.state.password)
+  handleLogin = async e => {
+    const loggedIn = await authService.login(this.state.username, this.state.password)
+
     this.setState({
       loggedIn
     })
@@ -26,8 +27,6 @@ class Login extends React.Component {
   })
 
   render () {
-    console.log(this.state.loggedIn)
-
     return (
       this.state.loggedIn
         ? <Redirect to="/" />
