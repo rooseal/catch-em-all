@@ -1,10 +1,10 @@
-export default (function () {
-  let auth = false
+const auth = (function () {
+  let auth = window.localStorage.getItem('cea-uname')
 
   async function login (name, pass) {
-    await setTimeout(() => {
-      window.localStorage.setItem('cea-uname', name)
-    }, 200)
+    await new Promise(resolve => setTimeout(resolve, 3000))
+    window.localStorage.setItem('cea-uname', name)
+    auth = name
     return true
   }
 
@@ -14,7 +14,7 @@ export default (function () {
   }
 
   function isAuth () {
-    return window.localStorage.getItem('uname') !== undefined
+    return auth !== null
   }
 
   return {
@@ -23,3 +23,5 @@ export default (function () {
     isAuth
   }
 }())
+
+export default auth
