@@ -5,8 +5,7 @@ import PokeAbilities from './poke-abilities'
 import PokeStats from './poke-stats'
 
 export default props => {
-  const { team, match } = props
-  const pokemon = team.find(member => member.id === match.params.id)
+  const { pokemon } = props
 
   if (pokemon === undefined) return <div>Pokemon not found</div>
 
