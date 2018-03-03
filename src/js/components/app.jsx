@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
 
 import * as pokemonService from '../services/pokemon-service'
+import TeamProvider from '../services/team-provider'
 
 import Modal from './modal/modal'
 import Controls from './controls'
@@ -33,34 +34,40 @@ export class CatchEmAll extends React.Component {
     const { team, newPokemons } = this.state
 
     return (
-      <Router>
-        <div className={`app-container`}>
-          <h1>Collect all pokemons</h1>
+      <TeamProvider.Provider team={this.state.team}>
+        <Router>
+          <div className={`app-container`}>
+            <h1>Collect all pokemons</h1>
 
-          <Controls />
+            <Controls />
 
-          <PrivateRoute exact path="/" render={props => <PokeList {...props} team={team} onRelease={this.handleRelease} onRandom={this.handleRandom} />} />
-          <PrivateRoute path="/pokemon/:id" render={props => <PokeDetails {...props} team={team} />} />
-          <PrivateRoute path="/battle" component={BattleHome} />
-          <Route path="/pokedex" component={Pokedex} />
-          <Route path="/login" component={Login} />
+            <PrivateRoute exact path="/" render={props => <PokeList {...props} team={team} onRelease={this.handleRelease} onRandom={this.handleRandom} />} />
+            <PrivateRoute path="/pokemon/:id" render={props => {
+              const pokemon = team.find(p => p.id === props.match.params.id)
 
-          { newPokemons !== undefined &&
+              return <PokeDetails {...props} pokemon={pokemon} />
+            }} />
+            <PrivateRoute path="/battle" component={BattleHome} />
+            <Route path="/pokedex" component={Pokedex} />
+            <Route path="/login" component={Login} />
 
-            <Modal onClose={this.handleCloseNewPokeModal} className="modal-content">
-              <h2>New Pokemons</h2>
-              <div className="flex-parent new-poke-list">
-                { newPokemons.map(pokemon => (
-                  <div className={`new-pokemon ${pokemon.type[0]}`}>
-                    <h2>{pokemon.name}</h2>
-                    <img className="new-pokemon-image" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.number}.png`} />
-                  </div>
-                ))}
-              </div>
-            </Modal>
-          }
-        </div>
-      </Router>
+            { newPokemons !== undefined &&
+
+              <Modal onClose={this.handleCloseNewPokeModal} className="modal-content">
+                <h2>New Pokemons</h2>
+                <div className="flex-parent new-poke-list">
+                  { newPokemons.map(pokemon => (
+                    <div className={`new-pokemon ${pokemon.type[0]}`}>
+                      <h2>{pokemon.name}</h2>
+                      <img className="new-pokemon-image" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokemon.number}.png`} />
+                    </div>
+                  ))}
+                </div>
+              </Modal>
+            }
+          </div>
+        </Router>
+      </TeamProvider.Provider>
     )
   }
 
