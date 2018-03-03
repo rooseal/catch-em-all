@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom'
 
-import { BattleComp, BattleFriends } from './'
+import { BattleComp, BattleFriends, BattleRoom } from './'
 
 export default props => {
   return (
@@ -28,6 +28,7 @@ export default props => {
 
       <Route path="/battle/comp" component={BattleComp} />
       <Route path="/battle/friends" component={BattleFriends} />
+      <Route path="/battle/room" component={BattleRoom} />
     </React.Fragment>
   )
 }

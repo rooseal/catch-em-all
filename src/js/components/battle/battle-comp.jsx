@@ -1,5 +1,7 @@
 import React from 'react'
 
+import PokeTag from '../details/poke-tag'
+
 import * as pokemonService from '../../services/pokemon-service'
 
 class BattleComp extends React.Component {
@@ -26,21 +28,32 @@ class BattleComp extends React.Component {
       })
   }
 
+  handleSelectOpponent = opponent => {
+    this.setState({
+      selected: opponent
+    })
+  }
+
   render () {
-    console.log(this.state.opponents)
     return (
       <React.Fragment>
-        <h2>This is the battle vs computer screen</h2>
-        <div className="flex-parent battle-poke-list pokedex" style={{flexWrap: 'wrap'}}>
-          { this.state.opponents.map(opponent => (
-            <div key={opponent.id} className={`battle-pokemon ${opponent.type[0]}`}>
-              <span className="level">{opponent.level}</span>
-              <h2>{opponent.name}</h2>
-              <img className="battle-pokemon-image" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${opponent.number}.png`} />
-            </div>
-          ))
-          }
-        </div>
+        {
+          this.state.selected === undefined
+            ? (
+              <div>
+                <h2>Lobby</h2>
+                <div className="flex-parent battle-poke-list pokedex" style={{flexWrap: 'wrap'}}>
+                  { this.state.opponents.map(opponent => <PokeTag key={opponent.id} opponent={opponent} onClick={this.handleSelectOpponent} />) }
+                </div>
+              </div>
+            )
+            : (
+              <div>
+                <h2>Battle Room</h2>
+                <PokeTag key={this.state.selected.id} opponent={this.state.selected} />
+              </div>
+            )
+        }
       </React.Fragment>
     )
   }
