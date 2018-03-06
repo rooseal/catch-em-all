@@ -6,13 +6,17 @@
 body {
     font-size: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
     color: royalblue;
-    font-size: 4em;
+    font-size: 3.5em;
+    line-height: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
+    margin: 0;
+    padding-left: 20px;
 }
 
 h2 {
@@ -58,18 +62,13 @@ a {
     margin-bottom: 20px;
 }
 
-.app-container {
-    width: 600px;
-    margin: 10px auto;
-    overflow-x: hidden;
-}
-
 .pokemon-container {
-    width: 600px;
+    width: 100%;
     margin: 20px auto;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .pokemon-list-entry {
@@ -106,6 +105,7 @@ a {
 
 .flex-parent {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .flex-grid {
@@ -114,7 +114,6 @@ a {
 }
 
 .flex-grid > div {
-    flex-basis: 0;
     flex-grow: 1;
 }
 
@@ -205,42 +204,126 @@ a {
     }
 }
 
-.battle-poke-list {    
-    .battle-pokemon {
-        width: 140px;
-        border-radius: 5px;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-        margin: 5px;
-        position: relative;
-        text-shadow: 0 0 2px black;
-        
-        h2 {
-            font-size: 1.3em;
-            color: black;
-            text-shadow: 0, 0, 4px white;
-            text-align: left;
-            margin-left: 10px;
-        }
-    
-        .level {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            font-size: 2em;
-            color: royalblue;
-            text-shadow: 0, 0, 2px black;
-            font-weight: bold;
-        }
+.battle-pokemon {
+    width: 190px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    margin: 5px;
+    position: relative;
+    text-shadow: 0 0 2px black;
 
-        .battle-pokemon-image {
-            width: 110px;
-            margin: 0 20px;
+    &.empty {
+        border: 2px solid lightgray;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+        color: black;
+        text-shadow: 0, 0, 4px white;
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .level {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 2em;
+        color: royalblue;
+        text-shadow: 0, 0, 2px black;
+        font-weight: bold;
+    }
+
+    .battle-pokemon-image {
+        width: 110px;
+        height: 160px;
+        margin: 0 20px;
+
+        img {
+            position: relative;
+            left: -25%;
+            width: 165px;
         }
     }
 }
 
+.poke-tag-container {
+    display: flex;
+    width: 280px;
+    margin-bottom: 15px;
+    height: 80px;
+    border: 2px solid #666;
+    border-radius: 5px;
+    border-left: 0px;
+    border-right-width: 5px;
+    margin: 5px;
+    box-shadow: inset -2px 0px 5px rgba(0, 0, 0, 0.6);
+    flex-basis: 280px;
+
+    &.right {
+        border-right: 0px;
+        border-left: 5px solid #666;
+        box-shadow: inset 2px 0px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .poke-tag-img {
+        width: 90px;
+        height: 90px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), inset 0px 0px 5px rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+        position: relative;
+        background-position: center;
+        background-size: 150%;
+        top: -5px;
+        left: -5px;
+
+        &.right {
+            left: 5px;
+            box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.6), inset 0px 0px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        .poke-level {
+            box-shadow: 2px -2px 1px rgba(0, 0, 0, 0.4);
+            background-color: white;
+            border-radius: 0 5px 0 5px;
+            color: red;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            font-size: 18px;
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            font-weight: bold;
+            font-kerning: normal;
+        }
+    }
+
+    .poke-tag-info {
+        margin-left: 15px;
+        width: 180px;
+
+        h2 {
+            text-align: left;
+            margin: 5px 0 15px 0;
+            font-size: 2em;
+        }
+    }
+
+}
+
 .pokedex {
     margin: 0;
+}
+
+.decorative1 {
+    font-size: 60px;
+    font-family: fantasy;
+    color: crimson;
+    text-shadow: 2px 2px black;
+    align-self: center;
+    text-align: center;
 }
 
 .arrow-right {
@@ -274,6 +357,23 @@ a {
     font-size: 1.4em;
 }
 
+.type {
+    border-radius: 3px;
+    padding: 0.3em 1em;
+    font-size: 1.5em;
+    width: 5em;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin-right: 6px;
+    margin-bottom: 4px;
+
+    &.small {
+        font-size: 1.3em;
+        padding: 0.2em 0.5em;
+    }
+}
+
 .pokemon-details {
     margin-bottom: 20px;
 
@@ -286,18 +386,6 @@ a {
         font-size: 4em;
         color: royalblue;
         font-weight: bold;
-    }
-
-    .type {
-        border-radius: 3px;
-        padding: 0.3em 1em;
-        font-size: 1.5em;
-        width: 5em;
-        text-align: center;
-        font-weight: bold;
-        color: white;
-        margin-right: 6px;
-        margin-bottom: 4px;
     }
 
     .ability {
