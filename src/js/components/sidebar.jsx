@@ -1,27 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const styles = {
-  container: {
-    top: '0',
-    bottom: '0',
-    width: '200px',
-    position: 'fixed',
-    backgroundColor: 'lavender',
-    boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.4)'
-  }
-}
-
-export default props => {
+export default ({side = 'left', width = '200px', open = false, ...props}) => {
   const dynamicStyles = {
-    [props.side]: '0',
-    width: props.width || '200px'
+    [side.toLowerCase()]: open ? '0' : `-${width}`,
+    width
   }
-
-  const container = Object.assign({}, styles.container, dynamicStyles)
 
   return (
-    <div style={container}>
+    <div className="side-menu" style={dynamicStyles}>
       {props.children}
     </div>
   )

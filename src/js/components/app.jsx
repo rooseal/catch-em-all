@@ -21,7 +21,10 @@ export class CatchEmAll extends React.Component {
   state = {
     team: [],
     newPokemons: undefined,
-    sideMenu: false
+    sideMenu: {
+      open: false,
+      side: 'Left'
+    }
   }
 
   componentDidMount () {
@@ -35,16 +38,18 @@ export class CatchEmAll extends React.Component {
     const { team, newPokemons, sideMenu } = this.state
 
     return (
-      <TeamProvider.Provider value={{ team: this.state.team }}>
+      <TeamProvider.Provider value={{ team: team }}>
         <Router>
           <div>
-            { sideMenu && <Controls /> }
+            <Controls side={sideMenu.side} open={sideMenu.open} width="200px" />
 
-            <div className={`app-container`} style={{marginLeft: `${this.state.sideMenu ? '200px' : '0'}`}}>
-              <header style={{height: '50px', backgroundColor: 'lavender'}}>
-                <h1><span onClick={() => this.setState(state => ({sideMenu: !state.sideMenu}))} style={{marginRight: '10px', color: 'black', fontWeight: 'bold'}}>&#x39e;</span>Collect all pokemons</h1>
+            <div className={`app-container`} style={{[`margin${sideMenu.side}`]: `${sideMenu.open ? '200px' : '0'}`}}>
+              <header className="top-menu">
+                <h1 className="alt-text">
+                  <span onClick={() => this.setState(state => ({sideMenu: {...state.sideMenu, open: !state.sideMenu.open}}))} style={{marginRight: '20px', color: 'white', fontWeight: 'bold', cursor: 'pointer'}}>&#x39e;</span>
+                  Collect all pokemons
+                </h1>
               </header>
-
               <PrivateRoute exact path="/" render={props => <PokeList {...props} team={team} onRelease={this.handleRelease} onRandom={this.handleRandom} />} />
               <PrivateRoute path="/pokemon/:id" render={props => {
                 const pokemon = team.find(p => p.id === props.match.params.id)

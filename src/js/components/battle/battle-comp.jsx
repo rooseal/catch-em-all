@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PokeItem from '../team/poke-item-2'
+import PokeItem from '../team/poke-item-4'
 import Modal from '../modal/modal'
 import BattleRoom from './battle-room'
 
@@ -54,6 +54,18 @@ class BattleComp extends React.Component {
     })
   }
 
+  handleHighlight = pokemon => {
+    this.setState({
+      highlighted: pokemon
+    })
+  }
+
+  handleUnhighlight = pokemon => {
+    this.setState({
+      highlighted: undefined
+    })
+  }
+
   render () {
     return (
       <React.Fragment>
@@ -63,7 +75,7 @@ class BattleComp extends React.Component {
               <div>
                 <h2>Lobby</h2>
                 <div className="flex-parent">
-                  { this.state.opponents.map(opponent => <PokeItem key={opponent.id} pokemon={opponent} onClick={this.handleSelectOpponent} />) }
+                  { this.state.opponents.map(opponent => <PokeItem onMouseOver={this.handleHighlight} onMouseOut={this.handleUnhighlight} style={{opacity: this.state.highlighted !== undefined ? this.state.highlighted === opponent ? '1' : '0.2' : '1'}} key={opponent.id} pokemon={opponent} onClick={this.handleSelectOpponent} />) }
                 </div>
               </div>
             )

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import PokeItem from './poke-item-3'
+import Context from '../context/context'
 
 import pokemonService from '../../services/pokemon-service'
 
@@ -50,8 +51,10 @@ class PokeList extends React.Component {
             mode === listModes.release &&
               <p className="important">Click pokemon to release into the wild</p>
           }
-          <button onClick={onRandom}>get random pokemon</button>
-          <button onClick={this.handleToggleRelease}>release a pokemon</button>
+          <Context>
+            <button className="side-button" onClick={onRandom}>get random pokemon</button>
+            <button className="side-button" onClick={this.handleToggleRelease}>release a pokemon</button>
+          </Context>
         </div>
       </div>
     )
