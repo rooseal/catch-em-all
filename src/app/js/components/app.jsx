@@ -48,7 +48,7 @@ export class CatchEmAll extends React.Component {
 
             <div className={`app-container`} style={{[`margin${sideMenu.side}`]: `${sideMenu.open ? '200px' : '0'}`}}>
 
-              <TopMenu />
+              <TopMenu toggleSideMenu={() => this.setState(state => ({sideMenu: {...state.sideMenu, open: !state.sideMenu.open}}))} />
 
               <PrivateRoute exact path="/" render={props => <PokeList {...props} team={team} onRelease={this.handleRelease} onRandom={this.handleRandom} />} />
               <PrivateRoute path="/pokemon/:id" render={props => {

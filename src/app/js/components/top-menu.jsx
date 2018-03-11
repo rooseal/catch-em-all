@@ -23,7 +23,7 @@ class TopMenu extends React.Component {
           }
         </div>
         <h1 className="alt-text">
-          <span onClick={() => this.setState(state => ({sideMenu: {...state.sideMenu, open: !state.sideMenu.open}}))} style={{marginRight: '20px', color: 'white', fontWeight: 'bold', cursor: 'pointer'}}>&#x39e;</span>
+          <span onClick={this.props.toggleSideMenu} style={{marginRight: '20px', color: 'white', fontWeight: 'bold', cursor: 'pointer'}}>&#x39e;</span>
           Collect all pokemons
         </h1>
       </header>
