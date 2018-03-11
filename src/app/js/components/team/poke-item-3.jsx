@@ -17,9 +17,10 @@ const PokeItem3 = props => {
       </div>
       <div className="short-seperator" />
       <div className="poke-3-text">
-        <p>
+        <p style={{width: '100%'}}>
           {
-            pokemon.text
+            pokemon.text ||
+            <button className="animated">Select pokemon</button>
           }
         </p>
       </div>

@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = exports = env => ({
   entry: [
     'babel-polyfill',
-    './src/js/components/app.jsx'
+    './src/app/js/components/app.jsx'
   ],
   output: {
     filename: 'bundle.js',

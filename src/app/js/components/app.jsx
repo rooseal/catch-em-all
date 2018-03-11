@@ -5,13 +5,14 @@ import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
 import * as pokemonService from '../services/pokemon-service'
 import TeamProvider from '../services/team-provider'
 
-import Modal from './modal/modal'
+import Modal from './ui/modal/modal'
 import Controls from './controls'
 import PrivateRoute from './auth/privateRoute'
 import Login from './auth/login'
+import TopMenu from './top-menu'
 
 import PokeList from './team/poke-list'
-import PokeDetails from './details/poke-details'
+import PokeDetails from './details/poke-details-2'
 import Pokedex from './pokedex/pokedex'
 import { BattleHome, BattleFriends, BattleComp } from './battle'
 
@@ -26,6 +27,8 @@ export class CatchEmAll extends React.Component {
       side: 'Left'
     }
   }
+
+  // Todo: Extract the state of the visibility of the modal to it's own component
 
   componentDidMount () {
     pokemonService.getPokemonTeam()
@@ -44,12 +47,9 @@ export class CatchEmAll extends React.Component {
             <Controls side={sideMenu.side} open={sideMenu.open} width="200px" />
 
             <div className={`app-container`} style={{[`margin${sideMenu.side}`]: `${sideMenu.open ? '200px' : '0'}`}}>
-              <header className="top-menu">
-                <h1 className="alt-text">
-                  <span onClick={() => this.setState(state => ({sideMenu: {...state.sideMenu, open: !state.sideMenu.open}}))} style={{marginRight: '20px', color: 'white', fontWeight: 'bold', cursor: 'pointer'}}>&#x39e;</span>
-                  Collect all pokemons
-                </h1>
-              </header>
+
+              <TopMenu />
+
               <PrivateRoute exact path="/" render={props => <PokeList {...props} team={team} onRelease={this.handleRelease} onRandom={this.handleRandom} />} />
               <PrivateRoute path="/pokemon/:id" render={props => {
                 const pokemon = team.find(p => p.id === props.match.params.id)

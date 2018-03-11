@@ -1,0 +1,88 @@
+/* Normalize all elements */
+
+* {
+  // outline: 1px dashed red; // Debugging the ui
+  user-select: none;
+}
+
+body {
+  font-size: 10px;
+  font-family: 'Arvo', serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: $prussian-blue;
+  font-size: 3.5em;
+  line-height: 50px;
+  font-family: 'Arvo', serif;
+  margin: 0;
+  padding-left: 20px;
+}
+
+h2 {
+  color: $prussian-blue;
+  font-size: 3em;
+  font-family: 'Arvo', serif;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  color: $prussian-blue;
+  font-size: 20px;
+  font-weight: bold;
+  width: 50%;
+  line-height: 50px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p {
+  text-align: center;
+  color: $ivory-black;
+  font-size: 12px;
+  margin: 10px;
+}
+
+button {
+  border: 0;
+  display: block;
+  margin: 5px 0;
+  width: 100%;
+  border-bottom: 5px solid darken($color: $ivory-black, $amount: 5);
+  background-color: $ivory-black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Arvo', serif;
+
+  &:hover {
+      background-color: lighten($color: $ivory-black, $amount: 20);
+      color: $ivory-black;
+  }
+
+  &.animated {
+      transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &.animated:hover {
+      background-color: #ddd;
+      color: $ivory-black;
+      transform: scale(1.1);
+  }
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid darkgray;
+  margin-bottom: 10px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}

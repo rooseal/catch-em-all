@@ -1,0 +1,138 @@
+// Poke item - 3
+.poke-3-info {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #666;
+}
+
+.poke-3-image {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 150px;
+  top: -50px;
+  background-color: white;
+  border: 1px solid darkgray;
+}
+
+.poke-3-container {
+  position: relative;
+  width: 400px;
+  margin: 50px auto 0 auto;
+  border-top: 1px solid darkgray;
+  text-align: left;
+  padding-bottom: 50px;
+}
+
+.poke-3-text {
+  height: 80px;
+  display: flex;
+  align-items: center; 
+}
+
+.alt-level {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: $ivory-black;
+  color: $gold-leaf;
+  border: 0;
+  border-radius: 50%;
+}
+
+// Poke tag - 1
+.poke-tag-container {
+  display: flex;
+  width: 280px;
+  margin-bottom: 15px;
+  height: 80px;
+  border: 2px solid #666;
+  border-radius: 5px;
+  border-left: 0px;
+  border-right-width: 5px;
+  margin: 5px;
+  box-shadow: inset -2px 0px 5px rgba(0, 0, 0, 0.6);
+  flex-basis: 280px;
+
+  &.right {
+      border-right: 0px;
+      border-left: 5px solid #666;
+      box-shadow: inset 2px 0px 5px rgba(0, 0, 0, 0.6);
+  }
+
+  .poke-tag-img {
+      width: 90px;
+      height: 90px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6), inset 0px 0px 5px rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+      position: relative;
+      background-position: center;
+      background-size: 150%;
+      top: -5px;
+      left: -5px;
+
+      &.right {
+          left: 5px;
+          box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.6), inset 0px 0px 5px rgba(0, 0, 0, 0.6);
+      }
+
+      .poke-level {
+          box-shadow: 2px -2px 1px rgba(0, 0, 0, 0.4);
+          background-color: white;
+          border-radius: 0 5px 0 5px;
+          color: red;
+          text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+          font-size: 18px;
+          text-align: center;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          left: 0px;
+          bottom: 0px;
+          font-weight: bold;
+          font-kerning: normal;
+      }
+  }
+
+  .poke-tag-info {
+      margin-left: 15px;
+      width: 180px;
+
+      h2 {
+          text-align: left;
+          margin: 5px 0 15px 0;
+          font-size: 2em;
+      }
+  }
+
+}
+
+// Poke tag - 2
+.poke-tag-container-2 {
+  min-width: 295px;
+  transition: all 0.5s;
+  cursor: pointer;
+  border: 1px solid gray;
+  width: 23%;
+  display: flex;
+  margin: 1%;
+  box-sizing: border-box;
+
+  .image {
+    height: 78px;
+    width: 78px;
+    background-size: 78px;
+    margin-right: 20px;
+  }
+
+  .style {
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-right: 1em;
+  }
+}

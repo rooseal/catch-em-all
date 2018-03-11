@@ -1,5 +1,5 @@
-import pokemonData from '../../../data/pokemon/pokemon.json'
-import multipliers from '../../../data/pokemon/multipliers.json'
+import pokemonData from '../../../../data/pokemon/pokemon.json'
+import multipliers from '../../../../data/pokemon/multipliers.json'
 import uuid from 'uuid/v1'
 
 const lsKeys = {
@@ -140,4 +140,12 @@ export function saveTeam (team) {
   if (window.localStorage === undefined) return console.log(`Warning - Can't save your data, please upgrade to a browser with local storage`)
 
   window.localStorage.setItem(lsKeys.pokemonTeam, JSON.stringify(team))
+}
+
+export function getStartHealth (pokemon) {
+  try {
+    return pokemon.stats.hp + (pokemon.level * 10)
+  } catch (error) {
+    throw TypeError('getStartHealth needs a pokemon with a stats property which is an object that contains a hp property which is a number and pokemon also needs a level property which is a number')
+  }
 }

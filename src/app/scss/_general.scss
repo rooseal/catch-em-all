@@ -1,0 +1,141 @@
+.top-menu {
+  background-color: $ivory-black;
+  font-variant: small-caps;
+  height: 5em;
+}
+
+.alt-text {
+  color: white;
+}
+
+.short-seperator {
+  height: 1px;
+  width: 50%;
+  margin: 10px auto;
+  background-color: darkgray;
+}
+
+.long-seperator {
+  height: 1px;
+  width: 100%;
+  margin: 10px auto;
+  background-color: darkgray;
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+.side-menu {
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  position: fixed;
+  background-color: $prussian-blue;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.side-button {
+  display: block;
+  margin: 5px 0;
+  width: 100%;
+  border-bottom: 5px solid darken($color: $ivory-black, $amount: 5);
+  background-color: $ivory-black;
+  color: white;
+}
+
+.side-header, .side-title {
+  line-height: 50px;
+  font-size: 16px;
+  margin: 0;
+  padding-left: 10px;
+  color: $gold-leaf;
+}
+
+.side-header {
+  background-color: $gold-leaf;
+  color: $ivory-black;
+}
+
+.app-content {
+  padding: 20px;
+}
+
+.flex-parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-grid > div {
+  flex-grow: 1;
+}
+
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+.cf {
+  *zoom: 1;
+}
+
+.big-button {
+  width: 100%;
+  padding: 20px;
+  margin: 10px auto;
+}
+
+.text {
+  font-size: 1.3em;
+  margin: 20px;
+}
+
+.arrow-right {
+  font-size: 3em;
+  padding: 0 0.5em;
+  line-height: 50px;
+  color: darkgray;
+}
+
+.arrow-right:last-child {
+  display: none;
+}
+
+.decorative1 {
+  font-size: 60px;
+  font-family: fantasy;
+  color: crimson;
+  text-shadow: 2px 2px black;
+  align-self: center;
+  text-align: center;
+}
+
+.important {
+  color: firebrick;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.error {
+  color: firebrick;
+   font-weight: bold;
+   border: 1px solid firebrick;
+   font-size: 1.8em;
+   padding: 10px 0;
+}

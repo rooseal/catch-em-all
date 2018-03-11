@@ -1,10 +1,16 @@
 import React from 'react'
 
 import TeamProvider from '../../services/team-provider'
-import PokeTag from '../team/poke-item-2'
-import Modal from '../modal/modal'
+import PokeItem from '../team/poke-item-3'
+import PokeTag from '../team/poke-item-4'
+import Modal from '../ui/modal/modal'
+import Context from '../ui/context/context'
 
 import { Link } from 'react-router-dom'
+
+const errors = {
+  noPokemon: 'You still have to chose your own pokemon to battle'
+}
 
 class BattleRoom extends React.Component {
   state = {
@@ -16,10 +22,24 @@ class BattleRoom extends React.Component {
     selectModal: true
   })
 
-  selectPokemon = pokemon => this.setState({
+  selectPokemon = pokemon => this.setState(state => ({
     pokemon,
+    error: state.error && state.error === errors.noPokemon ? undefined : state.error,
     selectModal: false
-  })
+  }))
+
+  handleStart = () => {
+    let { onStart } = this.props
+
+    if (this.state.pokemon === undefined || this.state.opponent === undefined) {
+      this.setState({
+        error: errors.noPokemon
+      })
+      return
+    }
+
+    onStart(this.state.pokemon, this.state.opponent)
+  }
 
   render () {
     const { opponent, onBack } = this.props
@@ -30,10 +50,15 @@ class BattleRoom extends React.Component {
           return (
             <div>
               <h2>Battle Room</h2>
+              { this.state.error && <p className="error">{ this.state.error }</p> }
               <div className="flex-parent" style={{justifyContent: 'space-around'}}>
-                <PokeTag pokemon={this.state.opponent} empty={this.state.opponent === undefined} />
-                <span className="decorative1">vs</span>
-                <PokeTag pokemon={this.state.pokemon} right empty={this.state.pokemon === undefined} onClick={this.openSelectModal}/>
+                <PokeItem pokemon={this.state.opponent} empty={this.state.opponent === undefined} />
+                <div className="battle-menu">
+                  <div className="decorative1" style={{margin: '50px 0'}}>vs</div>
+                  <button className="animated" onClick={this.handleStart}>Start battle</button>
+                  <button className="animated" onClick={onBack}>To Lobby</button>
+                </div>
+                <PokeItem pokemon={this.state.pokemon} right empty={this.state.pokemon === undefined} onClick={this.openSelectModal}/>
               </div>
               {
                 this.state.selectModal && (
@@ -51,10 +76,10 @@ class BattleRoom extends React.Component {
                   </div>
                 )
               }
-              <div style={{marginTop: '50px', textAlign: 'center'}}>
+              <Context>
                 <button onClick={onBack}>Back to Lobby</button>
-                <button>Start battle</button>
-              </div>
+                <button onClick={this.handleStart}>Start battle</button>
+              </Context>
             </div>
           )
         }}

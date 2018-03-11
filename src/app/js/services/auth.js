@@ -17,10 +17,19 @@ const auth = (function () {
     return auth !== null
   }
 
+  function getUser () {
+    if (isAuth()) {
+      return window.localStorage.getItem('cea-uname')
+    }
+
+    return undefined
+  }
+
   return {
     login,
     logout,
-    isAuth
+    isAuth,
+    getUser
   }
 }())
 

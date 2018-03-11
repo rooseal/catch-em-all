@@ -11,12 +11,12 @@ const PokeTag2 = props => {
         </div>
       )
       : (
-        <div onMouseOver={onMouseOver.bind(null, pokemon)} onMouseOut={onMouseOut.bind(null, pokemon)} style={{transition: 'all 0.5s', cursor: 'pointer', border: '1px solid gray', width: '23%', display: 'flex', margin: '1%', boxSizing: 'border-box', ...style}} onClick={onClick.bind(null, pokemon)}>
-          <div style={{height: '78px', width: '78px', backgroundSize: '78px', marginRight: '20px', backgroundImage: `url(https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokemon.number}.png)`}} />
+        <div className="poke-tag-container-2" onMouseOver={onMouseOver.bind(null, pokemon)} onMouseOut={onMouseOut.bind(null, pokemon)} onClick={onClick.bind(null, pokemon)}>
+          <div className="image" style={{backgroundImage: `url(https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokemon.number}.png)`}} />
           <div className="poke-tag-info">
             <h2 style={{margin: '0'}}>{pokemon.name}</h2>
             <div className="flex-parent">
-              { pokemon.type.map(type => <span key={type} style={{fontWeight: 'bold', fontSize: '1.4em', marginRight: '1em'}} className={`${type}-text`}>{type}</span>) }
+              { pokemon.type.map(type => <span key={type} className={`${type}-text style`}>{type}</span>) }
             </div>
             <div>Level {pokemon.level}</div>
           </div>

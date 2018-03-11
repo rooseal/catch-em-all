@@ -1,0 +1,17 @@
+// ???
+.new-poke-list {
+  margin: 0 50px;
+
+  .new-pokemon {
+      width: 190px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+      margin: 5px;
+      text-shadow: 0 0 2px black;
+      
+      .new-pokemon-image {
+          width: 150px;
+          margin: 0 20px;
+      }
+  }
+}

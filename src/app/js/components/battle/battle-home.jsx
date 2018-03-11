@@ -2,13 +2,13 @@ import React from 'react'
 import { Link, Route } from 'react-router-dom'
 
 import ComingSoon from '../coming-soon'
-import { BattleComp, BattleFriends, BattleRoom } from './'
+import { BattleComp, BattleRoom } from './'
 
 export default props => {
   return (
     <React.Fragment>
       { props.match.isExact &&
-        <div style={{display: 'flex', padding: '40px 80px', justifyContent: 'space-around'}}>
+        <div className="battle-home-container">
           <div className="battle-option">
             <h2>Pokemon battles</h2>
             <p className="text">
@@ -25,14 +25,15 @@ export default props => {
               The victor of the battle will receive the losing pokemon as price. There is no experience to be gained this way, only new pokemons.
               If you want to get all pokemons this is the way to go.
             </p>
-            <Link to="/battle/friends"><button className='animated' style={{width: '50%', margin: '50px auto 20px'}}>Find friends</button></Link>
+            <button className='animated' style={{width: '50%', margin: '50px auto 20px'}}>Find friends</button>
           </div>
         </div>
       }
 
       <Route path="/battle/comp" component={BattleComp} />
-      <Route path="/battle/friends" component={BattleFriends} />
       <Route path="/battle/room" component={BattleRoom} />
     </React.Fragment>
   )
 }
+
+// <Route path="/battle/friends" component={BattleFriends} />

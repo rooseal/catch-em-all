@@ -37,7 +37,7 @@ class Pokedex extends React.Component {
     let pokemonNames = Object.keys(pokemonService.getPokemonData()).slice(this.state.start, this.state.start + this.state.amount)
 
     return (
-      <div className="flex-grid new-poke-list pokedex">
+      <div className="flex-grid new-poke-list">
         { pokemonNames.map(pokemonName => {
           let pokemon = pokemonService.getPokemonData()[pokemonName]
 

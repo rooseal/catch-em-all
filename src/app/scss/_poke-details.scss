@@ -1,0 +1,159 @@
+/* Styling scheme v1 */
+.pokemon-details {
+  margin-bottom: 20px;
+
+  .summary {
+      padding-left: 1em;
+  }
+
+  .pokemon-level {
+      float: right;
+      font-size: 4em;
+      color: royalblue;
+      font-weight: bold;
+  }
+
+  .ability {
+      padding: 0.3em 1em;
+      font-size: 1.5em;
+      width: 5em;
+      font-weight: bold;
+      color: black;
+      margin-right: 6px;
+      margin-bottom: 4px;
+  }
+
+  .stat {
+      padding: 0.1em 1em;
+      font-size: 1.5em;
+      width: 5em;
+      font-weight: bold;
+      color: black;
+  }
+
+  p {
+      font-size: 1.3em;
+  }
+
+  h2 {
+      text-align: left;
+      margin: 0;
+      transform: scale(1.3, 1);
+      transform-origin: 0;
+      + p {
+          margin-top: -5px;
+          margin-bottom: 0;
+          color: royalblue;
+          display: inline-block;
+          font-size: 1.5em;
+          font-weight: bold;
+          transform: scale(1.5, 1);
+          transform-origin: 0;
+      }
+  }
+
+  img {
+      height: 200px;
+
+      &.evolution {
+          height: 50px;
+          &.active {
+              border-radius: 10%;
+              border: 2px solid green;
+          }
+      }
+  }
+}
+
+/* Styling scheme v2 */
+.pokemon-details-new {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  flex-wrap: wrap;
+
+  .summary {
+      padding-left: 1em;
+  }
+
+  .pokemon-level {
+      float: right;
+      font-size: 4em;
+      color: royalblue;
+      font-weight: bold;
+  }
+
+  .abilities {
+      width: 50%;
+      max-width: 400px;
+  }
+
+  .stats {
+      width: 50%;
+      max-width: 400px;
+  }
+
+  .ability {
+      padding: 0.3em 1em;
+      font-size: 1.5em;
+      width: 5em;
+      font-weight: bold;
+      color: black;
+      margin-right: 6px;
+      margin-bottom: 4px;
+  }
+
+  .stat {
+      padding: 0.1em 1em;
+      font-size: 1.5em;
+      width: 5em;
+      font-weight: bold;
+      color: black;
+  }
+
+  p {
+      font-size: 1.3em;
+  }
+
+  h2 {
+      text-align: left;
+      margin: 0;
+      transform: scale(1.3, 1);
+      transform-origin: 0;
+      + p {
+          margin-top: -5px;
+          margin-bottom: 0;
+          color: royalblue;
+          display: inline-block;
+          font-size: 1.5em;
+          font-weight: bold;
+          transform: scale(1.5, 1);
+          transform-origin: 0;
+      }
+  }
+
+  img {
+      &.evolution {
+          height: 50px;
+          &.active {
+              border-radius: 10%;
+              border: 2px solid green;
+          }
+      }
+  }
+}
+
+/* General details styling */
+.stat-bar {
+  height: 14px;
+  position: relative;
+  background-color: orangered;
+  top: 50%;
+  margin-top: -7px;
+}
+
+.evolutions {
+  align-items: center;
+  justify-content: space-between;
+}
