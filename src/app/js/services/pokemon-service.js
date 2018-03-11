@@ -1,10 +1,19 @@
 import pokemonData from '../../../../data/pokemon/pokemon.json'
 import multipliers from '../../../../data/pokemon/multipliers.json'
+
+import { stall } from './service-helper'
 import uuid from 'uuid/v1'
 
 const lsKeys = {
   pokemonTeam: 'cea-pokemon-team'
 }
+
+const starterPokemon = [
+  'charmander',
+  'pikachu',
+  'pidgey',
+  'mankey'
+]
 
 /**
  *Image sources
@@ -16,63 +25,36 @@ const lsKeys = {
 
 function newPokemon (pokemonName, level = 3) {
   let pokemon = pokemonData[pokemonName]
-  let maxLevelAbilities
 
-  console.log(pokemonName)
-
-  pokemon.evolutions.forEach((evolution, i, a) => {
-    if (evolution.name === pokemonName) {
-      if (a.length >= i + 1) {
-        maxLevelAbilities = null
-      } else {
-        maxLevelAbilities = a[i + 1].level
-      }
-    }
-  })
+  console.log(`Creating new pokemon: ${pokemonName}`)
 
   return Object.assign(
     {},
     pokemon,
     {
+      id: uuid(),
       name: pokemonName,
       nickName: pokemonName,
       level: level,
-      id: uuid(),
-      abilities: randomAbilities(pokemon.abilities, 4, maxLevelAbilities)
+      abilities: randomAbilities(pokemon.abilities, { amount: 4, max: level })
     }
   )
 }
 
-function randomAbilities (abilities, amount, max = null) {
+function randomAbilities (abilities, { amount = 1, max = undefined } = {}) {
   let chosen = []
-  let random
-  let tmp
 
-  if (max !== null) {
-    for (let i = 0; i < amount; i++) {
-      do {
-        random = Math.floor(Math.random() * abilities.length)
-        tmp = abilities.slice(random, 1).pop()
-      } while (tmp.level >= max)
+  abilities = max !== undefined ? abilities.filter(ability => ability.level <= max) : abilities
 
-      chosen.push(abilities.splice(random, 1).pop())
-    }
-  } else {
-    for (let i = 0; i < amount; i++) {
-      chosen.push(abilities.splice(Math.floor(Math.random() * abilities.length), 1).pop())
-    }
+  for (let i = 0; i < Math.max(amount, abilities.length); i++) {
+    chosen.push(abilities.splice(Math.floor(Math.random() * abilities.length), 1).pop())
   }
 
   return chosen
 }
 
-export function getPokemonData () {
-  return pokemonData
-}
-
 export function getPokemonTeam () {
   return new Promise((resolve, reject) => {
-    const pokemons = getPokemonData()
     let initialTeam
 
     if (window.localStorage) {
@@ -97,22 +79,19 @@ export function getPokemonTeam () {
 
 export function getFullyRandom () {
   return new Promise((resolve, reject) => {
-    const pokemons = getPokemonData()
-
-    resolve(newPokemon(Object.keys(pokemons)[Math.floor(Math.random() * Object.keys(pokemons).length)], Math.ceil(Math.random() * 10)))
+    resolve(newPokemon(Object.keys(pokemonData)[Math.floor(Math.random() * Object.keys(pokemonData).length)], Math.ceil(Math.random() * 10)))
   })
 }
 
 export function getRandom () {
   return new Promise((resolve, reject) => {
-    const pokemons = getPokemonData()
     let pokemon
 
     do {
-      let r = Math.floor(Math.random() * Object.keys(pokemons).length)
-      pokemon = Object.keys(pokemons)[r]
+      let r = Math.floor(Math.random() * Object.keys(pokemonData).length)
+      pokemon = Object.keys(pokemonData)[r]
       console.log(`Trying for pokemon: ${pokemon}`)
-    } while (pokemons[pokemon].evolutions[0].name !== pokemon)
+    } while (pokemonData[pokemon].evolutions[0].name !== pokemon)
 
     resolve(newPokemon(pokemon))
   })
@@ -124,7 +103,7 @@ export function getNumber (name) {
 
 export function getAttackMultiplier (attackType, defendingPokemon) {
   let multiplier = 1
-  let types = getPokemonData()[defendingPokemon]
+  let types = pokemonData[defendingPokemon]
 
   if (types === undefined) throw new Error('Defending pokemon could not be found in the pokedex')
 
@@ -148,4 +127,18 @@ export function getStartHealth (pokemon) {
   } catch (error) {
     throw TypeError('getStartHealth needs a pokemon with a stats property which is an object that contains a hp property which is a number and pokemon also needs a level property which is a number')
   }
+}
+
+export async function getPokemonList (start, end) {
+  console.log('Get list', start, end)
+
+  await stall(500)
+
+  return Object.keys(pokemonData).reduce((list, name, index, arr) => {
+    const pokemon = pokemonData[name]
+    if (Number(pokemon.number) >= start && Number(pokemon.number) < Math.min(end, arr.length)) {
+      list.push(pokemon)
+    }
+    return list
+  }, [])
 }
