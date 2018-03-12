@@ -13,7 +13,7 @@ export default props => {
             <div key={stat} className="flex-grid">
               <div className="stat" style={{flexGrow: 0.5}}>{stat}</div>
               <div>
-                <div className="stat-bar" style={{width: (statValue * 10 + '%')}}></div>
+                <div className="stat-bar" style={{width: (statValue / 180 * 100 + '%')}}></div>
               </div>
             </div>
           )

@@ -85,15 +85,17 @@ class BattleField extends React.Component {
         endMessage: `You have won this fight`,
         score: 1
       }, () => console.log(this.state.endMessage))
+      clearInterval(this.turn)
+      this.turn = undefined
     }
     if (this.state[PLAYER].health <= 0) {
       this.setState({
         endMessage: `You have lost this fight`,
         score: 0
       }, () => console.log(this.state.endMessage))
+      clearInterval(this.turn)
+      this.turn = undefined
     }
-    clearInterval(this.turn)
-    this.turn = undefined
   }
 
   render () {
@@ -115,7 +117,7 @@ class BattleField extends React.Component {
           </div>
           <div>
             <PokeTag pokemon={player} />
-            <div style={{transition: `all ${player.stats.speed * this.state.simulationSpeed}ms`, height: '20px', width: Math.max(0, currentHp[OPPONENT]) + '%', backgroundColor: currentHp[OPPONENT] > 70 ? 'green' : currentHp[OPPONENT] > 30 ? 'orange' : 'red'}} />
+            <div style={{transition: `all ${this.state.simulationSpeed}ms linear`, height: '20px', width: Math.max(0, currentHp[OPPONENT]) + '%', backgroundColor: currentHp[OPPONENT] > 70 ? 'green' : currentHp[OPPONENT] > 30 ? 'orange' : 'red'}} />
             {
               log[PLAYER].map((message, i) => <p key={message + i}>{message}</p>)
             }

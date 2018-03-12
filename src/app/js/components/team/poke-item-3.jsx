@@ -11,9 +11,16 @@ const PokeItem3 = props => {
         <h3 style={{paddingLeft: '55px'}}>{pokemon.category}</h3>
       </div>
       <div className="poke-3-info">
-        <span className="alt-level">
-          { pokemon.level }
-        </span>
+        {
+          !empty && (
+            <React.Fragment>
+              <span><small>
+                Level { pokemon.level }
+              </small></span>
+              { pokemon.type.map(type => <span className={`${type}-text`}><small>{type}</small></span>) }
+            </React.Fragment>
+          )
+        }
       </div>
       <div className="short-seperator" />
       <div className="poke-3-text">

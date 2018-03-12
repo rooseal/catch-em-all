@@ -3,6 +3,8 @@ import React from 'react'
 export default props => {
   const { abilities } = props
 
+  console.log(abilities)
+
   return (
     <div className="abilities">
       <h3>Abilities</h3>
@@ -11,7 +13,7 @@ export default props => {
           <div key={ability.name} className="flex-grid">
             <div className="ability">{ability.name}</div>
             <div>
-              <div className={`type ${ability.type.toLowerCase()}`}>{ability.type}</div>
+              <div className={`${ability.type.toLowerCase()}-text`}>{ability.type}</div>
             </div>
           </div>
         ))

@@ -45,7 +45,7 @@ class Pokedex extends React.Component {
   }
 
   componentWillUnmount () {
-    window.removeEventListener('scroll', this.handleLoadData)
+    window.removeEventListener('scroll', this.handleScrollEnd)
   }
 
   render () {

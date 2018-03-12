@@ -44,10 +44,12 @@ function newPokemon (pokemonName, level = 3) {
 function randomAbilities (abilities, { amount = 1, max = undefined } = {}) {
   let chosen = []
 
-  abilities = max !== undefined ? abilities.filter(ability => ability.level <= max) : abilities
+  let filteredAbilities = max !== undefined ? abilities.filter(ability => ability.level <= max) : abilities
+  let amountAbil = filteredAbilities.length
 
-  for (let i = 0; i < Math.max(amount, abilities.length); i++) {
-    chosen.push(abilities.splice(Math.floor(Math.random() * abilities.length), 1).pop())
+  for (let i = 0; i < Math.min(amount, amountAbil); i++) {
+    console.log('Abilities amount', filteredAbilities.length)
+    chosen.push(filteredAbilities.splice(Math.floor(Math.random() * filteredAbilities.length), 1).pop())
   }
 
   return chosen
@@ -148,7 +150,8 @@ export function chooseAttack (pokemon) {
 export function calculateDamage (attacker, attack, defender) {
   let critical = Math.random() > 0.9
 
-  return Math.floor((((2 * attacker.level * (critical ? 2 : 1) / 5 + 2) * 100 * (attacker.stats.attack / defender.stats.defense) / 50) + 2) * getAttackMultiplier(attack.type.toLowerCase(), defender))
+  return (Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * attacker.stats.attack * attack.power / defender.stats.defense) / 50) + 2) * getAttackMultiplier(attack.type.toLowerCase(), defender)
+  // return Math.floor((((2 * attacker.level * (critical ? 2 : 1) / 5 + 2) * Math.max(attack.power, 1) * (attacker.stats.attack / defender.stats.defense) / 50) + 2) * getAttackMultiplier(attack.type.toLowerCase(), defender))
 }
 
 export function saveTeam (team) {
@@ -159,7 +162,7 @@ export function saveTeam (team) {
 
 export function getStartHealth (pokemon) {
   try {
-    return pokemon.stats.hp + (pokemon.level * 10)
+    return pokemon.stats.hp + pokemon.level * 3
   } catch (error) {
     throw TypeError('getStartHealth needs a pokemon with a stats property which is an object that contains a hp property which is a number and pokemon also needs a level property which is a number')
   }

@@ -47,6 +47,7 @@ class BattleRoom extends React.Component {
     return (
       <TeamProvider.Consumer>
         {context => {
+          console.log(this.state.opponent)
           return (
             <div>
               <h2>Battle Room</h2>
