@@ -148,7 +148,7 @@ export function chooseAttack (pokemon) {
 export function calculateDamage (attacker, attack, defender) {
   let critical = Math.random() > 0.9
 
-  return (((2 * attacker.level * (critical ? 2 : 1) / 5 + 2) * 100 * (attacker.stats.attack / defender.stats.defense) / 50) + 2) * getAttackMultiplier(attack.type.toLowerCase(), defender)
+  return Math.floor((((2 * attacker.level * (critical ? 2 : 1) / 5 + 2) * 100 * (attacker.stats.attack / defender.stats.defense) / 50) + 2) * getAttackMultiplier(attack.type.toLowerCase(), defender))
 }
 
 export function saveTeam (team) {
