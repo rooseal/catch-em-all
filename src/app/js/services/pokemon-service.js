@@ -137,7 +137,7 @@ export async function getPokemonList (start, end) {
   return Object.keys(pokemonData).reduce((list, name, index, arr) => {
     const pokemon = pokemonData[name]
     if (Number(pokemon.number) >= start && Number(pokemon.number) < Math.min(end, arr.length)) {
-      list.push(pokemon)
+      list.push({...pokemon, name: name.replace(/^nidoran.*/, 'nidoran')})
     }
     return list
   }, [])
