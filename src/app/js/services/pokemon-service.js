@@ -133,6 +133,10 @@ export function attack (attacker, defender) {
   }
 }
 
+export function calculateExpGain (defeated) {
+  return defeated.baseExp * defeated.level / 7
+}
+
 export function chooseAttack (pokemon) {
   console.log('Choose Attack', pokemon)
   let { abilities } = pokemon
