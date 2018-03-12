@@ -2,7 +2,7 @@ import React from 'react'
 
 import PokeTag from '../team/poke-item-4'
 
-import { getStartHealth } from '../../services/pokemon-service'
+import { getStartHealth, attack } from '../../services/pokemon-service'
 
 const PLAYER = Symbol('player')
 const OPPONENT = Symbol('opponent')
@@ -36,15 +36,15 @@ class BattleField extends React.Component {
   }
 
   handleAction = side => {
-    let damage = 5
     let other = this.getOther(side)
+    let result = attack(this.state[side], this.state[other])
 
     this.setState(state => {
       // Check log concat for one liner instead of push
       console.log('side', side, 'other', other)
       let log = state.log[side]
-      let health = state[other].health - damage
-      let message = `${names[side]} attacked for ${damage} damage.`
+      let health = state[other].health - result.damage
+      let message = `${names[side]} used ${result.ability} for ${result.damage} damage. My hp is ${state[side].health}`
 
       log.push(message)
 
@@ -86,14 +86,14 @@ class BattleField extends React.Component {
         <div className="flex-parent" style={{justifyContent: 'space-around'}}>
           <div>
             <PokeTag pokemon={opponent} />
-            <div style={{height: '20px', width: currentHp[OPPONENT] + '%', backgroundColor: currentHp[OPPONENT] > 70 ? 'green' : currentHp[OPPONENT] > 30 ? 'orange' : 'red'}} />
+            <div style={{height: '20px', width: Math.max(0, currentHp[PLAYER]) + '%', backgroundColor: currentHp[PLAYER] > 70 ? 'green' : currentHp[PLAYER] > 30 ? 'orange' : 'red'}} />
             {
               log[OPPONENT].map(message => <p>{message}</p>)
             }
           </div>
           <div>
             <PokeTag pokemon={player} />
-            <div style={{transition: `all ${player.stats.speed * this.state.simulationSpeed}ms`, height: '20px', width: currentHp[PLAYER] + '%', backgroundColor: currentHp[PLAYER] > 70 ? 'green' : currentHp[PLAYER] > 30 ? 'orange' : 'red'}} />
+            <div style={{transition: `all ${player.stats.speed * this.state.simulationSpeed}ms`, height: '20px', width: Math.max(0, currentHp[OPPONENT]) + '%', backgroundColor: currentHp[OPPONENT] > 70 ? 'green' : currentHp[OPPONENT] > 30 ? 'orange' : 'red'}} />
             {
               log[PLAYER].map(message => <p>{message}</p>)
             }

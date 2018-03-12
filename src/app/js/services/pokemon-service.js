@@ -77,6 +77,7 @@ export function getPokemonTeam () {
   })
 }
 
+// Clean up the get random and delete the fully random
 export function getFullyRandom () {
   return new Promise((resolve, reject) => {
     resolve(newPokemon(Object.keys(pokemonData)[Math.floor(Math.random() * Object.keys(pokemonData).length)], Math.ceil(Math.random() * 10)))
@@ -103,7 +104,7 @@ export function getNumber (name) {
 
 export function getAttackMultiplier (attackType, defendingPokemon) {
   let multiplier = 1
-  let types = pokemonData[defendingPokemon]
+  let types = typeof defendingPokemon === 'string' ? pokemonData[defendingPokemon].type : defendingPokemon.type
 
   if (types === undefined) throw new Error('Defending pokemon could not be found in the pokedex')
 
@@ -113,6 +114,37 @@ export function getAttackMultiplier (attackType, defendingPokemon) {
       multiplier *= tmpMultiplier
     }
   })
+
+  console.log('Multiplier:', multiplier)
+
+  return multiplier
+}
+
+export function attack (attacker, defender) {
+  console.log(`${attacker.name} attacks ${defender.name}`)
+  let attack = chooseAttack(attacker)
+  let attackDamage = calculateDamage(attacker, attack, defender)
+
+  console.log('Attack Damage', attackDamage)
+
+  return {
+    damage: attackDamage,
+    ability: attack.name
+  }
+}
+
+export function chooseAttack (pokemon) {
+  console.log('Choose Attack', pokemon)
+  let { abilities } = pokemon
+
+  // Just choose a random ability for now
+  return abilities[Math.floor(Math.random() * abilities.length)]
+}
+
+export function calculateDamage (attacker, attack, defender) {
+  let critical = Math.random() > 0.9
+
+  return (((2 * attacker.level * (critical ? 2 : 1) / 5 + 2) * 100 * (attacker.stats.attack / defender.stats.defense) / 50) + 2) * getAttackMultiplier(attack.type.toLowerCase(), defender)
 }
 
 export function saveTeam (team) {
