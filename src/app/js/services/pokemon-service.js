@@ -1,6 +1,8 @@
 import pokemonData from '../../../../data/pokemon/pokemon.json'
 import multipliers from '../../../../data/pokemon/multipliers.json'
 
+import Pokemon from '../pokemon/pokemon'
+
 import { stall } from './service-helper'
 import uuid from 'uuid/v1'
 
@@ -23,38 +25,6 @@ const starterPokemon = [
  *-------------------
  */
 
-function newPokemon (pokemonName, level = 3) {
-  let pokemon = pokemonData[pokemonName]
-
-  console.log(`Creating new pokemon: ${pokemonName}`)
-
-  return Object.assign(
-    {},
-    pokemon,
-    {
-      id: uuid(),
-      name: pokemonName,
-      nickName: pokemonName,
-      level: level,
-      abilities: randomAbilities(pokemon.abilities, { amount: 4, max: level })
-    }
-  )
-}
-
-function randomAbilities (abilities, { amount = 1, max = undefined } = {}) {
-  let chosen = []
-
-  let filteredAbilities = max !== undefined ? abilities.filter(ability => ability.level <= max) : abilities
-  let amountAbil = filteredAbilities.length
-
-  for (let i = 0; i < Math.min(amount, amountAbil); i++) {
-    console.log('Abilities amount', filteredAbilities.length)
-    chosen.push(filteredAbilities.splice(Math.floor(Math.random() * filteredAbilities.length), 1).pop())
-  }
-
-  return chosen
-}
-
 export function getPokemonTeam () {
   return new Promise((resolve, reject) => {
     let initialTeam
@@ -72,7 +42,7 @@ export function getPokemonTeam () {
       'pikachu',
       'pidgey',
       'mankey'
-    ].map(pokemon => newPokemon(pokemon))
+    ].map(pokemon => Pokemon(pokemon))
 
     saveTeam(initialTeam)
     resolve(initialTeam)
@@ -82,7 +52,7 @@ export function getPokemonTeam () {
 // Clean up the get random and delete the fully random
 export function getFullyRandom () {
   return new Promise((resolve, reject) => {
-    resolve(newPokemon(Object.keys(pokemonData)[Math.floor(Math.random() * Object.keys(pokemonData).length)], Math.ceil(Math.random() * 10)))
+    resolve(Pokemon(Object.keys(pokemonData)[Math.floor(Math.random() * Object.keys(pokemonData).length)], Math.ceil(Math.random() * 10)))
   })
 }
 
@@ -96,62 +66,12 @@ export function getRandom () {
       console.log(`Trying for pokemon: ${pokemon}`)
     } while (pokemonData[pokemon].evolutions[0].name !== pokemon)
 
-    resolve(newPokemon(pokemon))
+    resolve(Pokemon(pokemon))
   })
 }
 
 export function getNumber (name) {
   return pokemonData[name].number
-}
-
-export function getAttackMultiplier (attackType, defendingPokemon) {
-  let multiplier = 1
-  let types = typeof defendingPokemon === 'string' ? pokemonData[defendingPokemon].type : defendingPokemon.type
-
-  if (types === undefined) throw new Error('Defending pokemon could not be found in the pokedex')
-
-  types.forEach(type => {
-    let tmpMultiplier = multipliers[attackType].attack[type]
-    if (tmpMultiplier) {
-      multiplier *= tmpMultiplier
-    }
-  })
-
-  console.log('Multiplier:', multiplier)
-
-  return multiplier
-}
-
-export function attack (attacker, defender) {
-  console.log(`${attacker.name} attacks ${defender.name}`)
-  let attack = chooseAttack(attacker)
-  let attackDamage = calculateDamage(attacker, attack, defender)
-
-  console.log('Attack Damage', attackDamage)
-
-  return {
-    damage: attackDamage,
-    ability: attack.name
-  }
-}
-
-export function calculateExpGain (defeated) {
-  return defeated.baseExp * defeated.level / 7
-}
-
-export function chooseAttack (pokemon) {
-  console.log('Choose Attack', pokemon)
-  let { abilities } = pokemon
-
-  // Just choose a random ability for now
-  return abilities[Math.floor(Math.random() * abilities.length)]
-}
-
-export function calculateDamage (attacker, attack, defender) {
-  let critical = Math.random() > 0.9
-
-  return (Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * attacker.stats.attack * attack.power / defender.stats.defense) / 50) + 2) * getAttackMultiplier(attack.type.toLowerCase(), defender)
-  // return Math.floor((((2 * attacker.level * (critical ? 2 : 1) / 5 + 2) * Math.max(attack.power, 1) * (attacker.stats.attack / defender.stats.defense) / 50) + 2) * getAttackMultiplier(attack.type.toLowerCase(), defender))
 }
 
 export function saveTeam (team) {
@@ -180,4 +100,8 @@ export async function getPokemonList (start, end) {
     }
     return list
   }, [])
+}
+
+export function getBasePokemon (name) {
+  return pokemonData[name]
 }
