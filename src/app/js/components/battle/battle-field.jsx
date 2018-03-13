@@ -1,8 +1,6 @@
 import React from 'react'
 
-import PokeTag from '../team/poke-item-4'
-
-import { getStartHealth, attack } from '../../services/pokemon-service'
+import PokeTag from '../team/poke-tag'
 
 const PLAYER = Symbol('player')
 const OPPONENT = Symbol('opponent')
@@ -14,8 +12,8 @@ const names = {
 
 class BattleField extends React.Component {
   state = {
-    [OPPONENT]: this.props.player ? {...this.props.opponent, health: getStartHealth(this.props.opponent)} : undefined,
-    [PLAYER]: this.props.player ? {...this.props.player, health: getStartHealth(this.props.player)} : undefined,
+    [OPPONENT]: this.props.player ? this.props.opponent.preparation() : undefined,
+    [PLAYER]: this.props.player ? this.props.player.preparation() : undefined,
     log: {
       [OPPONENT]: [],
       [PLAYER]: []
@@ -37,32 +35,13 @@ class BattleField extends React.Component {
     return side === PLAYER ? OPPONENT : PLAYER
   }
 
-  handleAction = side => {
-    let other = this.getOther(side)
-    let result = attack(this.state[side], this.state[other])
-
-    this.setState(state => {
-      // Check log concat for one liner instead of push
-      console.log('side', side, 'other', other)
-      let log = state.log[side]
-      let health = state[other].health - result.damage
-      let message = `${names[side]} used ${result.ability} for ${result.damage} damage. My hp is ${state[side].health}`
-
-      log.push(message)
-
-      return { [other]: {...state[other], health}, log: {...state.log, [side]: log} }
-    }, () => {
-      this.handleEnd(side)
-    })
-  }
-
   handleTurn = () => {
     let { [OPPONENT]: opponent, [PLAYER]: player } = this.state
     let order = opponent.stats.speed > player.stats.speed ? [OPPONENT, PLAYER] : [PLAYER, OPPONENT]
 
     order.forEach((attacker, i) => {
       let defender = this.getOther(attacker)
-      let result = attack(this.state[attacker], this.state[defender])
+      let result = attacker.attack(this.state[defender])
 
       this.setState(state => {
         // Check log concat for one liner instead of push
@@ -101,8 +80,8 @@ class BattleField extends React.Component {
   render () {
     const { [PLAYER]: player, [OPPONENT]: opponent, log, endMessage } = this.state
     const currentHp = {
-      [PLAYER]: (opponent.health / getStartHealth(opponent)) * 100,
-      [OPPONENT]: (player.health / getStartHealth(player)) * 100
+      [PLAYER]: (opponent.currentHealth / opponent.maxHealth()) * 100,
+      [OPPONENT]: (player.currentHealth / player.maxHealth()) * 100
     }
 
     return (

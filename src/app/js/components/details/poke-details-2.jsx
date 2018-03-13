@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PokeItem from '../team/poke-item-3'
+import PokeItem from '../team/poke-item-big'
 import PokeAbilities from './poke-abilities-2'
 import PokeStats from './poke-stats'
 

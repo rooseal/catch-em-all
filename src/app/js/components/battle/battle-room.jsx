@@ -1,8 +1,8 @@
 import React from 'react'
 
 import TeamProvider from '../../services/team-provider'
-import PokeItem from '../team/poke-item-3'
-import PokeTag from '../team/poke-item-4'
+import PokeItem from '../team/poke-item-big'
+import PokeTag from '../team/poke-tag'
 import Modal from '../ui/modal/modal'
 import Context from '../ui/context/context'
 
@@ -59,7 +59,7 @@ class BattleRoom extends React.Component {
                   <button className="animated" onClick={this.handleStart}>Start battle</button>
                   <button className="animated" onClick={onBack}>To Lobby</button>
                 </div>
-                <PokeItem pokemon={this.state.pokemon} right empty={this.state.pokemon === undefined} onClick={this.openSelectModal}/>
+                <PokeItem pokemon={this.state.pokemon} empty={this.state.pokemon === undefined} onClick={this.openSelectModal}/>
               </div>
               {
                 this.state.selectModal && (

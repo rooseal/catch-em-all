@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PokeItem from '../team/poke-item-4'
+import PokeTag from '../team/poke-tag'
 import Modal from '../ui/modal/modal'
 import BattleRoom from './battle-room'
 import BattleField from './battle-field'
@@ -89,6 +89,7 @@ class BattleComp extends React.Component {
 
   // Todo: Extract highlight code into a seperate grid component which also handles the sizing
   render () {
+    console.log(this.state.opponents)
     return (
       <React.Fragment>
         {
@@ -97,7 +98,7 @@ class BattleComp extends React.Component {
               <div>
                 <h2>Lobby</h2>
                 <div className="flex-parent">
-                  { this.state.opponents.map(opponent => <PokeItem onMouseOver={this.handleHighlight} onMouseOut={this.handleUnhighlight} style={{opacity: this.state.highlighted !== undefined ? this.state.highlighted === opponent ? '1' : '0.2' : '1'}} key={opponent.id} pokemon={opponent} onClick={this.handleSelect} />) }
+                  { this.state.opponents.map(opponent => <PokeTag onMouseOver={this.handleHighlight} onMouseOut={this.handleUnhighlight} style={{opacity: this.state.highlighted !== undefined ? this.state.highlighted === opponent ? '1' : '0.2' : '1'}} key={opponent.id} pokemon={opponent} onClick={this.handleSelect} />) }
                 </div>
               </div>
             )

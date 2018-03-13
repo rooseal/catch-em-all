@@ -1,21 +1,22 @@
 const path = require('path')
 const express = require('express')
+const cors = require('cors')
 
 const app = express()
 const port = 3000
 
 const pokemonDB = require('../../data/pokemon/pokemon.json')
 
-app.use(function(req, res, next) {
-  console.log('Request for ' + req.path)
-  console.log('Request for ' + req.method)
+app.use(cors())
+app.use(function (req, res, next) {
+  console.log(`${req.method}  ${req.path}`)
   next()
 })
 
 app.get('/pokemon/:name', (req, res) => {
   let name = req.params.name
 
-  res.send(JSON.stringify(pokemonDB[name]))
+  res.json(pokemonDB[name])
 })
 
 app.listen(port, () => {

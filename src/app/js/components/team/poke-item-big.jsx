@@ -1,11 +1,14 @@
 import React from 'react'
 
-const PokeItem3 = props => {
+const PokeItem = props => {
   const { pokemon = {}, onClick = () => {}, empty = false } = props
 
   return (
     <div className={'poke-3-container'} onClick={onClick.bind(null, pokemon)}>
-      <img className="poke-3-image" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokemon.number}.png`} />
+      { empty
+        ? <span className="poke-3-image">?</span>
+        : <img className="poke-3-image" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokemon.number}.png`} />
+      }
       <div className="flex-parent">
         <h3 style={{paddingRight: '55px'}}>{pokemon.name}</h3>
         <h3 style={{paddingLeft: '55px'}}>{pokemon.category}</h3>
@@ -26,8 +29,7 @@ const PokeItem3 = props => {
       <div className="poke-3-text">
         <p style={{width: '100%'}}>
           {
-            pokemon.text ||
-            <button className="animated">Select pokemon</button>
+            empty ? <button className="animated">Select pokemon</button> : pokemon.text
           }
         </p>
       </div>
@@ -36,4 +38,4 @@ const PokeItem3 = props => {
   )
 }
 
-export default PokeItem3
+export default PokeItem

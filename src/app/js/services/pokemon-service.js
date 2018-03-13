@@ -80,14 +80,6 @@ export function saveTeam (team) {
   window.localStorage.setItem(lsKeys.pokemonTeam, JSON.stringify(team))
 }
 
-export function getStartHealth (pokemon) {
-  try {
-    return pokemon.stats.hp + pokemon.level * 3
-  } catch (error) {
-    throw TypeError('getStartHealth needs a pokemon with a stats property which is an object that contains a hp property which is a number and pokemon also needs a level property which is a number')
-  }
-}
-
 export async function getPokemonList (start, end) {
   console.log('Get list', start, end)
 

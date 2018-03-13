@@ -34,6 +34,25 @@ export const PokemonSmarts = function (pokemon) {
 
     return chosen
   }
+  function calculateMaxHealth () {
+    console.log(pokemon)
+    let { base, ivs, evs } = pokemon.stats
+    return Math.floor((2 * base.hp + ivs.hp + evs.hp) * pokemon.level / 100 + pokemon.level + 10)
+  }
+  function preparation () {
+    pokemon.currentHealth = calculateMaxHealth()
+
+    return pokemon
+  }
+  function createIVs () {
+    return Object.keys(pokemon.stats).reduce((ivs, statName) => {
+      ivs[statName] = Math.floor(Math.random() * 31)
+      return ivs
+    }, {})
+  }
+  function createCharacteristic () {
+    // To be written
+  }
 
   // Public methods
   return {
@@ -41,7 +60,11 @@ export const PokemonSmarts = function (pokemon) {
     calculateDamage,
     calculateExpGain,
     getBaseExperience,
-    randomAbilities
+    randomAbilities,
+    calculateMaxHealth,
+    createIVs,
+    preparation,
+    ...pokemon
   }
 }
 

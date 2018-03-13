@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PokeTag2 = props => {
+const PokeTag = props => {
   const { pokemon = {}, onClick = () => {}, empty = false, right, style = {}, onMouseOver = () => {}, onMouseOut = () => {} } = props
 
   return (
@@ -25,4 +25,4 @@ const PokeTag2 = props => {
   )
 }
 
-export default PokeTag2
+export default PokeTag
