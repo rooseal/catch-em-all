@@ -7,3 +7,7 @@
 * Cleanup service layer
 * Add battle simulations
 * Change intervals in battlefield to timeouts or request anim frame
+
+
+** test pokemons from local storage
+** test random starter pokemons
