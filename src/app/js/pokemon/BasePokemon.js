@@ -15,7 +15,7 @@ class BasePokemon {
   init (pokemonData) {
     this.name = pokemonData.name
     this.types = pokemonData.type
-    this.baseStats = pokemonData.stats
+    this.number = pokemonData.number
     this.height = pokemonData.height
     this.training = {
       ev: convertEvFromData(pokemonData.training.ev),
@@ -27,7 +27,6 @@ class BasePokemon {
   }
 
   get abilityList () {
-    console.log('Inside abilityList', BasePokemon.abilities, this.name)
     return BasePokemon.abilities[this.name]
   }
 
@@ -61,10 +60,16 @@ class BasePokemon {
     return defeated.baseExp * defeated.level / 7
   }
 
+  static getUniqueData (pokemon) {
+    let { id, nickName, currentAbilities, level, stats, experience, name } = pokemon
+
+    return {
+      id, nickName, currentAbilities, level, stats, experience, name
+    }
+  }
+
   randomAbilities ({ amount = 1, max = undefined } = {}) {
     let chosen = []
-
-    console.log('abilityList', this.abilityList)
 
     let filteredAbilities = max !== undefined ? this.abilityList.filter(ability => ability.level <= max) : this.abilities
     let amountAbil = filteredAbilities.length
@@ -88,7 +93,7 @@ class BasePokemon {
   }
 
   createIVs () {
-    return Object.keys(this.baseStats).reduce((ivs, statName) => {
+    return Object.keys(this.stats.base).reduce((ivs, statName) => {
       ivs[statName] = Math.floor(Math.random() * 31)
       return ivs
     }, {})
