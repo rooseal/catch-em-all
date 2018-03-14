@@ -2,7 +2,7 @@ import React from 'react'
 
 const PokeTag = props => {
   const { pokemon = {}, onClick = () => {}, empty = false, right, style = {}, onMouseOver = () => {}, onMouseOut = () => {} } = props
-
+  console.log('Poketag', pokemon)
   return (
     empty
       ? (
@@ -16,7 +16,7 @@ const PokeTag = props => {
           <div className="poke-tag-info">
             <h2 style={{margin: '0'}}>{pokemon.name}</h2>
             <div className="flex-parent">
-              { pokemon.type.map(type => <span key={type} className={`${type}-text style`}>{type}</span>) }
+              { pokemon.types.map(type => <span key={type} className={`${type}-text style`}>{type}</span>) }
             </div>
             <div>Level {pokemon.level}</div>
           </div>

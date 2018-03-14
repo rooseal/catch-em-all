@@ -89,7 +89,7 @@ class BattleComp extends React.Component {
 
   // Todo: Extract highlight code into a seperate grid component which also handles the sizing
   render () {
-    console.log(this.state.opponents)
+    console.log('Battle comp opponent', this.state.opponents)
     return (
       <React.Fragment>
         {

@@ -35,7 +35,7 @@ export const PokemonSmarts = function (pokemon) {
     return chosen
   }
   function calculateMaxHealth () {
-    console.log(pokemon)
+    console.log('Calc max hp', pokemon)
     let { base, ivs, evs } = pokemon.stats
     return Math.floor((2 * base.hp + ivs.hp + evs.hp) * pokemon.level / 100 + pokemon.level + 10)
   }

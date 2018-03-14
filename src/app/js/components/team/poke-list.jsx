@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import PokeTag from './poke-tag'
+import PokeItem from './poke-item-big'
 import Context from '../ui/context/context'
 
 import pokemonService from '../../services/pokemon-service'
@@ -43,7 +43,7 @@ class PokeList extends React.Component {
                 className={`${mode === listModes.release ? 'release-mode' : ''}`}
               >
                 <Link to={`/pokemon/${pokemon.id}`}>
-                  <PokeTag pokemon={pokemon} />
+                  <PokeItem pokemon={pokemon} />
                 </Link>
               </div>
             ))

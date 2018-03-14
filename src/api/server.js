@@ -16,7 +16,7 @@ app.use(function (req, res, next) {
 app.get('/pokemon/:name', (req, res) => {
   let name = req.params.name
 
-  res.json(pokemonDB[name])
+  res.json({...pokemonDB[name], name})
 })
 
 app.listen(port, () => {

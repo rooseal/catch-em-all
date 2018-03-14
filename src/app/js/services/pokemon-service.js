@@ -1,10 +1,12 @@
 import pokemonData from '../../../../data/pokemon/pokemon.json'
 import multipliers from '../../../../data/pokemon/multipliers.json'
 
-import Pokemon from '../pokemon/pokemon'
+import Pokemon from '../pokemon/Pokemon-class'
 
 import { stall } from './service-helper'
 import uuid from 'uuid/v1'
+
+import { getBaseData } from './api-service'
 
 const lsKeys = {
   pokemonTeam: 'cea-pokemon-team'
@@ -42,7 +44,7 @@ export function getPokemonTeam () {
       'pikachu',
       'pidgey',
       'mankey'
-    ].map(pokemon => Pokemon(pokemon))
+    ].map(pokemon => new Pokemon(getBaseData(pokemon)))
 
     saveTeam(initialTeam)
     resolve(initialTeam)
@@ -50,9 +52,10 @@ export function getPokemonTeam () {
 }
 
 // Clean up the get random and delete the fully random
-export function getFullyRandom () {
-  return new Promise((resolve, reject) => {
-    resolve(Pokemon(Object.keys(pokemonData)[Math.floor(Math.random() * Object.keys(pokemonData).length)], Math.ceil(Math.random() * 10)))
+export async function getFullyRandom () {
+  let baseData = await getBaseData(Object.keys(pokemonData)[Math.floor(Math.random() * Object.keys(pokemonData).length)])
+  return new Pokemon(baseData, {
+    level: Math.ceil(Math.random() * 10)
   })
 }
 
@@ -66,7 +69,7 @@ export function getRandom () {
       console.log(`Trying for pokemon: ${pokemon}`)
     } while (pokemonData[pokemon].evolutions[0].name !== pokemon)
 
-    resolve(Pokemon(pokemon))
+    resolve(new Pokemon(getBaseData(pokemon)))
   })
 }
 
@@ -92,8 +95,4 @@ export async function getPokemonList (start, end) {
     }
     return list
   }, [])
-}
-
-export function getBasePokemon (name) {
-  return pokemonData[name]
 }

@@ -24,7 +24,7 @@ const Pokemon = async function (name, {
   let full = PokemonSmarts(base)
 
   // Create Unique pokemon
-  let final = Object.assign({}, full, {
+  full = Object.assign(full, {
     id: uuid(),
     level: level,
     name: name,
@@ -47,7 +47,7 @@ const Pokemon = async function (name, {
 
   // Internal
   function attack (opponent) {
-    return final.calculateDamage(final.chooseAttack(), opponent)
+    return full.calculateDamage(full.chooseAttack(), opponent)
   }
 
   function grow () {
@@ -58,20 +58,20 @@ const Pokemon = async function (name, {
     // Check if able to evolve
   }
 
-  console.log('final', final)
+  console.log('full', full)
 
   // Public methods
   return {
     ...base,
-    id: final.id,
-    level: final.level,
-    name: final.name,
-    nickName: final.nickName,
-    abilities: final.abilities,
-    stats: final.stats,
-    experience: final.experience,
-    preparation: final.preparation,
-    maxHealth: final.calculateMaxHealth,
+    id: full.id,
+    level: full.level,
+    name: full.name,
+    nickName: full.nickName,
+    abilities: full.abilities,
+    stats: full.stats,
+    experience: full.experience,
+    preparation: full.preparation,
+    maxHealth: full.calculateMaxHealth,
     attack,
     grow
   }
