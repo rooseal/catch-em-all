@@ -3,7 +3,7 @@ import multipliers from '../../../../data/pokemon/multipliers.json'
 
 import Pokemon from '../pokemon/Pokemon'
 
-import { stall } from './service-helper'
+import { stall, getRandomNumbersInRange } from './service-helper'
 import uuid from 'uuid/v1'
 
 import { getBaseData } from './api-service'
@@ -16,7 +16,9 @@ const starterPokemon = [
   'charmander',
   'pikachu',
   'pidgey',
-  'mankey'
+  'mankey',
+  'geodude',
+  'rattata'
 ]
 
 /**
@@ -45,16 +47,18 @@ export async function getPokemonTeam () {
   }
 
   // Create new team if none is saved
-  let initialTeam = [
-    'charmander',
-    'pikachu',
-    'pidgey',
-    'mankey'
-  ].map(pokemon => new Pokemon(getBaseData(pokemon)))
+  let team = await Promise.all(
+    getRandomNumbersInRange(2, 0, starterPokemon.length, true).map(async index => {
+      let pokemonName = starterPokemon[index]
+      let baseData = await getBaseData(pokemonName)
+      return new Pokemon(baseData, {level: 3})
+    })
+  )
 
-  saveTeam(initialTeam)
+  console.log('service team', team)
 
-  return initialTeam
+  saveTeam(team)
+  return team
 }
 
 // Clean up the get random and delete the fully random
@@ -85,17 +89,8 @@ export function getNumber (name) {
 export function saveTeam (team) {
   if (window.localStorage === undefined) return console.log(`Warning - Can't save your data, please upgrade to a browser with local storage`)
 
-  window.localStorage.setItem(lsKeys.pokemonTeam, JSON.stringify(team.map(pokemon => Pokemon.getUniqueData(pokemon))))
-}
-
-export async function getPokemonList (start, end) {
-  await stall(500)
-
-  return Object.keys(pokemonData).reduce((list, name, index, arr) => {
-    const pokemon = pokemonData[name]
-    if (Number(pokemon.number) >= start && Number(pokemon.number) < Math.min(end, arr.length)) {
-      list.push({...pokemon, name: name.replace(/^nidoran.*/, 'nidoran')})
-    }
-    return list
-  }, [])
+  let saveTeam = team.map(pokemon => {
+    return Pokemon.getUniqueData(pokemon)
+  })
+  window.localStorage.setItem(lsKeys.pokemonTeam, JSON.stringify(saveTeam))
 }

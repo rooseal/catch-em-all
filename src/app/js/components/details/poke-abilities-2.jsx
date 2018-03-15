@@ -3,8 +3,6 @@ import React from 'react'
 export default props => {
   const { abilities } = props
 
-  console.log(abilities)
-
   return (
     <div className="abilities">
       <h3>Abilities</h3>

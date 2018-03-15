@@ -10,28 +10,28 @@ class Pokemon extends BasePokemon {
   } = {}) {
     super()
     this.level = level
-    this.init(base)
+    this.init(base, presets)
   }
 
   /**
    * Initialize the pokemon
    * @param {Promise | Object} base - The base data
    */
-  async init (base) {
+  async init (base, presets) {
     if (base.then !== undefined) {
       base = await base
     }
 
     super.init(base)
 
-    this.id = base.id || uuid()
-    this.nickName = base.nickName || base.name
-    this.currentAbilities = base.currentAbilities || this.randomAbilities({ max: this.level })
-    this.experience = base.experience || this.baseExperience
-    this.stats = {}
-    this.stats.base = base.stats.base || base.stats
-    this.stats.ivs = base.stats.ivs || this.createIVs(this)
-    this.stats.evs = base.stats.evs || {
+    this.id = presets.id || uuid()
+    this.nickName = presets.nickName || base.name
+    this.currentAbilities = presets.currentAbilities || this.randomAbilities({ max: this.level })
+    this.experience = presets.experience || this.baseExperience
+    this.stats = presets.stats = presets.stats || {}
+    this.stats.base = presets.stats.base || base.stats
+    this.stats.ivs = presets.stats.ivs || this.createIVs(this)
+    this.stats.evs = presets.stats.evs || {
       hp: 0,
       attack: 0,
       defense: 0,
@@ -40,7 +40,7 @@ class Pokemon extends BasePokemon {
       speed: 0
     }
 
-    console.log('Enumerable', JSON.stringify(Pokemon.getUniqueData(this)))
+    console.log('Created pokemon', this)
   }
 
   attack (opponent) {

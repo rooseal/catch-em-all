@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default props => {
+const PokeAbilities = props => {
   const { abilities } = props
 
   return (
@@ -19,3 +19,5 @@ export default props => {
     </div>
   )
 }
+
+export default PokeAbilities

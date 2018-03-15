@@ -17,6 +17,8 @@ class BasePokemon {
     this.types = pokemonData.type
     this.number = pokemonData.number
     this.height = pokemonData.height
+    this.text = pokemonData.text
+    this.category = pokemonData.category
     this.training = {
       ev: convertEvFromData(pokemonData.training.ev),
       catchRate: pokemonData.training.catchRate,

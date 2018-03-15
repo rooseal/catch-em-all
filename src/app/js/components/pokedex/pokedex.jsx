@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getPokemonList } from '../../services/pokemon-service'
+import { getPokemonList } from '../../services/api-service'
 
 class Pokedex extends React.Component {
   state = {

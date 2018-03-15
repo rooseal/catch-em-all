@@ -31,10 +31,17 @@ export class CatchEmAll extends React.Component {
   // Todo: Extract the state of the visibility of the modal to it's own component
 
   componentDidMount () {
-    pokemonService.getPokemonTeam()
-      .then(team => this.setState({
-        team
-      }))
+    this.loadTeam()
+  }
+
+  loadTeam = async () => {
+    let team = await pokemonService.getPokemonTeam()
+
+    console.log('team', team)
+
+    this.setState({
+      team
+    })
   }
 
   render () {

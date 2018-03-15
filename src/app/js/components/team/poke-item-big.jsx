@@ -20,7 +20,7 @@ const PokeItem = props => {
               <span><small>
                 Level { pokemon.level }
               </small></span>
-              { pokemon.type.map(type => <span className={`${type}-text`}><small>{type}</small></span>) }
+              { pokemon.types.map(type => <span key={type} className={`${type}-text`}><small>{type}</small></span>) }
             </React.Fragment>
           )
         }
