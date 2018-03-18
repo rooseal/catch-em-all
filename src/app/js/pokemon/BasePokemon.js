@@ -55,7 +55,7 @@ class BasePokemon {
   }
 
   static getMultiplier (attackType, defender) {
-    return defender.type.reduce((multi, type) => multi * (multipliers[attackType].attack[type] || 1), 1)
+    return defender.types.reduce((multi, type) => multi * (multipliers[attackType].attack[type] || 1), 1)
   }
 
   static calculateExpGain (defeated) {
