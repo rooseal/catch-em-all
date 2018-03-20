@@ -47,19 +47,19 @@ class BattleRoom extends React.Component {
     return (
       <TeamProvider.Consumer>
         {context => {
-          console.log('Battle room opponent', this.state.opponent)
           return (
             <div>
               <h2>Battle Room</h2>
               { this.state.error && <p className="error">{ this.state.error }</p> }
               <div className="flex-parent" style={{justifyContent: 'space-around'}}>
-                <PokeItem pokemon={this.state.opponent} empty={this.state.opponent === undefined} />
+                <PokeItem pokemon={this.state.opponent}/>
                 <div className="battle-menu">
                   <div className="decorative1" style={{margin: '50px 0'}}>vs</div>
                   <button className="animated" onClick={this.handleStart}>Start battle</button>
                   <button className="animated" onClick={onBack}>To Lobby</button>
+                  <button className="animated" onClick={this.openSelectModal}>Switch</button>
                 </div>
-                <PokeItem pokemon={this.state.pokemon} empty={this.state.pokemon === undefined} onClick={this.openSelectModal}/>
+                <PokeItem pokemon={this.state.pokemon || context.team[0]}/>
               </div>
               {
                 this.state.selectModal && (

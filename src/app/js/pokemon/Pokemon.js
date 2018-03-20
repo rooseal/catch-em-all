@@ -40,20 +40,31 @@ class Pokemon extends BasePokemon {
       speed: 0
     }
 
+    this.preparation()
+
     console.log('Created pokemon', this)
   }
 
   attack (opponent) {
-    let ability = this.abilities[Math.floor(Math.random() * this.abilities.length)]
+    let ability = this.currentAbilities[Math.floor(Math.random() * this.currentAbilities.length)]
 
     let critical = Math.random() > 0.9 ? 2 : 1
     let a = Math.floor(2 * this.level * critical / 5 + 2)
-    let b = Math.floor(a * this.baseStats.attack * ability.power / opponent.stats.defense)
+    let b = Math.floor(a * this.stats.base.attack * ability.power / opponent.stats.base.defense)
     let c = Math.floor(b / 50) + 2
 
     let damage = c * Pokemon.getMultiplier(ability.type.toLowerCase(), opponent)
 
-    return damage
+    return {
+      damage,
+      ability: ability.name
+    }
+  }
+
+  damage (amount) {
+    this.currentHealth = Math.max(this.currentHealth - amount, 0)
+
+    return this
   }
 
   grow () {

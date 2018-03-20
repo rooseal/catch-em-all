@@ -2,7 +2,7 @@ import React from 'react'
 
 const PokeTag = props => {
   const { pokemon = {}, onClick = () => {}, empty = false, right, style = {} } = props
-  console.log('Poketag', pokemon)
+
   return (
     empty
       ? (

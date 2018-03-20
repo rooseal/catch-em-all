@@ -12,12 +12,13 @@ const names = {
 
 class BattleField extends React.Component {
   state = {
-    [OPPONENT]: this.props.player ? this.props.opponent.preparation() : undefined,
-    [PLAYER]: this.props.player ? this.props.player.preparation() : undefined,
+    [OPPONENT]: this.props.opponent,
+    [PLAYER]: this.props.player,
     log: {
       [OPPONENT]: [],
       [PLAYER]: []
     },
+    turn: 0,
     simulationSpeed: this.props.simulationSpeed || 500
   }
 
@@ -39,19 +40,20 @@ class BattleField extends React.Component {
     let { [OPPONENT]: opponent, [PLAYER]: player } = this.state
     let order = opponent.stats.speed > player.stats.speed ? [OPPONENT, PLAYER] : [PLAYER, OPPONENT]
 
-    order.forEach((attacker, i) => {
-      let defender = this.getOther(attacker)
-      let result = attacker.attack(this.state[defender])
+    order.forEach((attackerRef, i) => {
+      let attacker = this.state[attackerRef]
+      let defenderRef = this.getOther(attackerRef)
+      let defender = this.state[defenderRef]
+      let result = attacker.attack(defender)
 
       this.setState(state => {
         // Check log concat for one liner instead of push
-        let log = state.log[attacker]
-        let health = state[defender].health - result.damage
-        let message = `${names[attacker]} used ${result.ability} for ${result.damage} damage. My hp is ${state[attacker].health}`
+        let log = state.log[attackerRef]
+        let message = `${state.turn}. ${names[attackerRef]} used ${result.ability} for ${result.damage} damage. My hp is ${attacker.currentHealth}`
 
         log.push(message)
 
-        return { [defender]: {...state[defender], health}, log: {...state.log, [attacker]: log} }
+        return { [defenderRef]: defender.damage(result.damage), log: {...state.log, [attackerRef]: log}, turn: state.turn + 1 }
       }, () => {
         this.handleEnd()
       })
@@ -59,7 +61,7 @@ class BattleField extends React.Component {
   }
 
   handleEnd = () => {
-    if (this.state[OPPONENT].health <= 0) {
+    if (this.state[OPPONENT].currentHealth <= 0) {
       this.setState({
         endMessage: `You have won this fight`,
         score: 1
@@ -67,7 +69,7 @@ class BattleField extends React.Component {
       clearInterval(this.turn)
       this.turn = undefined
     }
-    if (this.state[PLAYER].health <= 0) {
+    if (this.state[PLAYER].currentHealth <= 0) {
       this.setState({
         endMessage: `You have lost this fight`,
         score: 0
@@ -80,26 +82,33 @@ class BattleField extends React.Component {
   render () {
     const { [PLAYER]: player, [OPPONENT]: opponent, log, endMessage } = this.state
     const currentHp = {
-      [PLAYER]: (opponent.currentHealth / opponent.maxHealth()) * 100,
-      [OPPONENT]: (player.currentHealth / player.maxHealth()) * 100
+      [PLAYER]: (opponent.currentHealth / opponent.calculateMaxHealth()) * 100,
+      [OPPONENT]: (player.currentHealth / player.calculateMaxHealth()) * 100
     }
+
+    console.log(player, opponent)
 
     return (
       <div>
         <div className="flex-parent" style={{justifyContent: 'space-around'}}>
           <div>
             <PokeTag pokemon={opponent} />
-            <div style={{height: '20px', width: Math.max(0, currentHp[PLAYER]) + '%', backgroundColor: currentHp[PLAYER] > 70 ? 'green' : currentHp[PLAYER] > 30 ? 'orange' : 'red'}} />
+            <div style={{transition: `all ${this.state.simulationSpeed}ms linear`, height: '20px', width: Math.max(0, currentHp[PLAYER]) + '%', backgroundColor: currentHp[PLAYER] > 70 ? 'green' : currentHp[PLAYER] > 30 ? 'orange' : 'red'}} />
+          </div>
+          <div style={{width: '50%'}}>
             {
-              log[OPPONENT].map((message, i) => <p key={message + i}>{message}</p>)
+              log[PLAYER].concat(log[OPPONENT])
+                .sort()
+                .map((message, i) => {
+                  let align = message.indexOf('Opponent') !== -1 ? 'left' : 'right'
+
+                  return <p style={{textAlign: align}} key={message + i}>{message}</p>
+                })
             }
           </div>
           <div>
             <PokeTag pokemon={player} />
             <div style={{transition: `all ${this.state.simulationSpeed}ms linear`, height: '20px', width: Math.max(0, currentHp[OPPONENT]) + '%', backgroundColor: currentHp[OPPONENT] > 70 ? 'green' : currentHp[OPPONENT] > 30 ? 'orange' : 'red'}} />
-            {
-              log[PLAYER].map((message, i) => <p key={message + i}>{message}</p>)
-            }
           </div>
         </div>
         <div>
